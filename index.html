@@ -371,6 +371,28 @@
     line-height: 1;
   }
   .modal p { margin: 0 0 10px; font-size: 13.5px; color: var(--muted); }
+  .provider-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .provider-tab {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+  }
+  .provider-tab.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
   .field-label {
     display: block;
     font-size: 13px;
@@ -491,7 +513,7 @@
   <main class="wrap">
     <div class="hero">
       <h1>2027 肖 1000 题 · 马原全 212 道多选刷题本</h1>
-      <p>点击 A/B/C/D 选项作答 → 点绿色折叠条自动判对错并看解析（做错可点右上角标错题）。绑定一次 GitHub 钥匙即可手机/电脑全自动云同步。</p>
+      <p>点击 A/B/C/D 选项作答 → 点绿色折叠条自动判对错并看解析（做错可点右上角标错题）。绑定一次 <strong>Gitee 码云（国内免 VPN 直连）</strong> 或 GitHub 钥匙即可手机/电脑全自动云同步。</p>
       <div class="stats-row">
         <span class="stat-chip" id="statDone">已做 0 / 212</span>
         <span class="stat-chip" id="statAcc">正确率 --</span>
@@ -3706,13 +3728,17 @@
         <h3>☁ 手机 / 电脑自动云同步</h3>
         <button type="button" class="close-btn" id="syncCloseBtn">&times;</button>
       </div>
-      <p>利用你自己的免费 GitHub 私有 Gist 自动保存做题选项与错题记录（仅需勾选 <code>gist</code> 这 1 个最小权限，绝不碰你的仓库）。</p>
-      <div class="btn-row" style="margin-top:0;margin-bottom:8px;">
-        <a class="btn" href="https://github.com/settings/tokens/new?scopes=gist&description=%E8%80%83%E7%A0%94%E5%88%B7%E9%A2%98%E6%9C%AC%E4%BA%91%E5%90%8C%E6%AD%A5" target="_blank" rel="noopener">1. 点我去 GitHub 生成钥匙</a>
+      <div class="provider-tabs">
+        <button type="button" class="provider-tab active" data-provider="gitee">🇨🇳 Gitee 码云（国内免VPN）</button>
+        <button type="button" class="provider-tab" data-provider="github">🌐 GitHub（需VPN）</button>
       </div>
-      <label class="field-label" for="tokenInput">2. 粘贴 GitHub Token（ghp_ 开头）</label>
-      <input class="input-box" id="tokenInput" type="password" placeholder="粘贴你生成的 Token，只保存在当前设备本地">
-      <label class="field-label" for="gistInput">私有 Gist ID（首次留空，会自动创建）</label>
+      <p id="providerHint">利用你自己的免费 Gitee 私有代码片段自动保存进度与错题，<strong>国内手机/电脑免梯子直连秒同步</strong>（只需勾选 <code>gists</code> 这 1 个最小权限）。</p>
+      <div class="btn-row" style="margin-top:0;margin-bottom:8px;">
+        <a class="btn" id="genTokenLink" href="https://gitee.com/profile/personal_access_tokens/new" target="_blank" rel="noopener">1. 点我去 Gitee 生成私人令牌</a>
+      </div>
+      <label class="field-label" for="tokenInput" id="tokenLabel">2. 粘贴 Gitee 私人令牌（只勾选 gists 即可）</label>
+      <input class="input-box" id="tokenInput" type="password" placeholder="粘贴你的令牌，只保存在当前设备本地">
+      <label class="field-label" for="gistInput">私有代码片段 / Gist ID（首次留空，会自动创建）</label>
       <input class="input-box" id="gistInput" type="text" placeholder="留空自动创建；换设备用一键链接可免填">
       <div class="btn-row">
         <button type="button" class="btn primary" id="bindSyncBtn">绑定并立即同步</button>
@@ -3725,7 +3751,7 @@
       <div class="sync-msg" id="syncStatusBox">当前状态：尚未绑定云同步（进度仅保存在本机浏览器）。</div>
 
       <hr class="divider">
-      <p style="margin-bottom:6px;"><strong>备用离线同步口令 / 重置</strong>（没挂代理也能 3 秒导进度）</p>
+      <p style="margin-bottom:6px;"><strong>备用离线同步口令 / 重置</strong>（完全断网也能 3 秒导进度）</p>
       <div class="btn-row">
         <button type="button" class="btn" id="exportCodeBtn">复制进度口令</button>
         <button type="button" class="btn" id="importCodeBtn">导入进度口令</button>
@@ -3742,11 +3768,11 @@
   const STORE_CLOUD = "ky_ma_all212_cloud_v2";
   const STORE_THEME = "ky_ma_theme_v1";
   const GIST_FILENAME = "ky_ma_212_progress.json";
-  const GIST_DESC = "2027 考研政治马原212多选刷题本云同步数据";
+  const GIST_DESC = "考研马原212多选刷题进度";
 
   // State schema: { records: { "11": { sel: ["A","B"], star: true, checked: true, ts: 1700000000000 } }, updatedAt: 0 }
   let state = { records: {}, updatedAt: 0 };
-  let cloud = { token: "", gistId: "" };
+  let cloud = { provider: "gitee", token: "", gistId: "" };
   let pushTimer = null;
   let isSyncing = false;
   let filterMode = "all"; // all | star | todo
@@ -3758,7 +3784,13 @@
     } catch (e) {}
     try {
       const c = JSON.parse(localStorage.getItem(STORE_CLOUD) || "null");
-      if (c && typeof c === "object") cloud = { token: c.token || "", gistId: c.gistId || "" };
+      if (c && typeof c === "object") {
+        cloud = {
+          provider: c.provider || (c.token && c.token.startsWith("gh") ? "github" : "gitee"),
+          token: c.token || "",
+          gistId: c.gistId || ""
+        };
+      }
     } catch (e) {}
   }
 
@@ -3821,6 +3853,35 @@
   const tokenInput = document.getElementById("tokenInput");
   const gistInput = document.getElementById("gistInput");
   const syncStatusBox = document.getElementById("syncStatusBox");
+  const providerHint = document.getElementById("providerHint");
+  const genTokenLink = document.getElementById("genTokenLink");
+  const tokenLabel = document.getElementById("tokenLabel");
+  const providerTabs = Array.from(document.querySelectorAll(".provider-tab"));
+  let modalProvider = "gitee";
+
+  function renderProviderUI(p) {
+    modalProvider = p === "github" ? "github" : "gitee";
+    providerTabs.forEach(btn => btn.classList.toggle("active", btn.dataset.provider === modalProvider));
+    if (modalProvider === cloud.provider) {
+      tokenInput.value = cloud.token || "";
+      gistInput.value = cloud.gistId || "";
+    } else {
+      tokenInput.value = "";
+      gistInput.value = "";
+    }
+    if (modalProvider === "gitee") {
+      providerHint.innerHTML = '利用你自己的免费 Gitee 私有代码片段自动保存进度与错题，<strong>国内手机/电脑免梯子直连秒同步</strong>（只需勾选 <code>gists</code> 这 1 个最小权限）。';
+      genTokenLink.href = "https://gitee.com/profile/personal_access_tokens/new";
+      genTokenLink.textContent = "1. 点我去 Gitee 生成私人令牌";
+      tokenLabel.textContent = "2. 粘贴 Gitee 私人令牌（只勾选 gists 即可）";
+    } else {
+      providerHint.innerHTML = '利用你自己的免费 GitHub 私有 Gist 自动保存进度与错题（需挂 VPN，只需勾选 <code>gist</code> 这 1 个最小权限）。';
+      genTokenLink.href = "https://github.com/settings/tokens/new?scopes=gist&description=%E8%80%83%E7%A0%94%E5%88%B7%E9%A2%98%E6%9C%AC%E4%BA%91%E5%90%8C%E6%AD%A5";
+      genTokenLink.textContent = "1. 点我去 GitHub 生成钥匙";
+      tokenLabel.textContent = "2. 粘贴 GitHub Token（ghp_ 开头）";
+    }
+  }
+  providerTabs.forEach(btn => btn.addEventListener("click", () => renderProviderUI(btn.dataset.provider)));
 
   cards.forEach(card => {
     const q = card.dataset.q;
@@ -3891,46 +3952,113 @@
   }
 
   function setCloudBadge(text, ok) {
-    statCloud.textContent = "云同步：" + text;
+    const tag = cloud.provider === "gitee" ? "Gitee" : "GitHub";
+    statCloud.textContent = ok ? `云同步(${tag})：${text}` : "云同步：" + text;
     syncOpenBtn.textContent = ok ? "☁ " + text : "☁ 云同步";
     syncOpenBtn.classList.toggle("sync-ok", !!ok);
-    syncStatusBox.textContent = "当前状态：" + text + (cloud.gistId ? `（Gist: ${cloud.gistId.slice(0, 8)}...）` : "");
+    syncStatusBox.textContent = `当前状态：${text}` + (cloud.gistId ? `（${tag} ID: ${cloud.gistId.slice(0, 8)}...）` : "");
   }
 
-  async function ghFetch(url, options = {}) {
-    const res = await fetch(url, {
-      ...options,
+  async function apiListGists() {
+    if (cloud.provider === "gitee") {
+      const res = await fetch("https://gitee.com/api/v5/gists?per_page=50&access_token=" + encodeURIComponent(cloud.token));
+      if (!res.ok) throw new Error("Gitee HTTP " + res.status);
+      return res.json();
+    }
+    const res = await fetch("https://api.github.com/gists?per_page=50", {
+      headers: { "Accept": "application/vnd.github+json", "Authorization": "Bearer " + cloud.token }
+    });
+    if (!res.ok) throw new Error("GitHub HTTP " + res.status);
+    return res.json();
+  }
+
+  async function apiGetGist(id) {
+    if (cloud.provider === "gitee") {
+      const res = await fetch(`https://gitee.com/api/v5/gists/${encodeURIComponent(id)}?access_token=${encodeURIComponent(cloud.token)}`);
+      if (!res.ok) throw new Error("Gitee HTTP " + res.status);
+      return res.json();
+    }
+    const res = await fetch("https://api.github.com/gists/" + encodeURIComponent(id), {
+      headers: { "Accept": "application/vnd.github+json", "Authorization": "Bearer " + cloud.token }
+    });
+    if (!res.ok) throw new Error("GitHub HTTP " + res.status);
+    return res.json();
+  }
+
+  async function apiCreateGist(contentStr) {
+    if (cloud.provider === "gitee") {
+      const form = new URLSearchParams();
+      form.append("access_token", cloud.token);
+      form.append("description", GIST_DESC);
+      form.append("public", "false");
+      form.append(`files[${GIST_FILENAME}][content]`, contentStr);
+      const res = await fetch("https://gitee.com/api/v5/gists", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: form.toString()
+      });
+      if (!res.ok) {
+        const t = await res.text().catch(() => "");
+        throw new Error("Gitee HTTP " + res.status + " " + t.slice(0, 120));
+      }
+      return res.json();
+    }
+    const res = await fetch("https://api.github.com/gists", {
+      method: "POST",
       headers: {
         "Accept": "application/vnd.github+json",
         "Authorization": "Bearer " + cloud.token,
-        "Content-Type": "application/json",
-        ...(options.headers || {})
-      }
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        description: GIST_DESC,
+        public: false,
+        files: { [GIST_FILENAME]: { content: contentStr } }
+      })
     });
-    if (!res.ok) {
-      const txt = await res.text().catch(() => "");
-      throw new Error(`HTTP ${res.status} ${txt.slice(0, 120)}`);
+    if (!res.ok) throw new Error("GitHub HTTP " + res.status);
+    return res.json();
+  }
+
+  async function apiPatchGist(id, contentStr) {
+    if (cloud.provider === "gitee") {
+      const form = new URLSearchParams();
+      form.append("access_token", cloud.token);
+      form.append(`files[${GIST_FILENAME}][content]`, contentStr);
+      const res = await fetch("https://gitee.com/api/v5/gists/" + encodeURIComponent(id), {
+        method: "PATCH",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: form.toString()
+      });
+      if (!res.ok) {
+        const t = await res.text().catch(() => "");
+        throw new Error("Gitee HTTP " + res.status + " " + t.slice(0, 120));
+      }
+      return res.json();
     }
+    const res = await fetch("https://api.github.com/gists/" + encodeURIComponent(id), {
+      method: "PATCH",
+      headers: {
+        "Accept": "application/vnd.github+json",
+        "Authorization": "Bearer " + cloud.token,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ files: { [GIST_FILENAME]: { content: contentStr } } })
+    });
+    if (!res.ok) throw new Error("GitHub HTTP " + res.status);
     return res.json();
   }
 
   async function findOrCreateGist() {
     if (cloud.gistId) return cloud.gistId;
-    const list = await ghFetch("https://api.github.com/gists?per_page=50");
-    const found = list.find(g => g.files && g.files[GIST_FILENAME]);
+    const list = await apiListGists();
+    const found = Array.isArray(list) ? list.find(g => g.files && g.files[GIST_FILENAME]) : null;
     if (found) {
       cloud.gistId = found.id;
       saveCloudCfg();
       return found.id;
     }
-    const created = await ghFetch("https://api.github.com/gists", {
-      method: "POST",
-      body: JSON.stringify({
-        description: GIST_DESC,
-        public: false,
-        files: { [GIST_FILENAME]: { content: JSON.stringify(state) } }
-      })
-    });
+    const created = await apiCreateGist(JSON.stringify(state));
     cloud.gistId = created.id;
     saveCloudCfg();
     return created.id;
@@ -3943,25 +4071,21 @@
     setCloudBadge("拉取中...", true);
     try {
       const id = await findOrCreateGist();
-      const g = await ghFetch("https://api.github.com/gists/" + id);
+      const g = await apiGetGist(id);
       const f = g.files && g.files[GIST_FILENAME];
       if (f && f.content) {
         const remote = JSON.parse(f.content);
         const merged = mergeState(remote);
         renderUI();
-        // If local has newer changes than remote, push merged result back
         if ((state.updatedAt || 0) > (remote.updatedAt || 0) || merged) {
-          await ghFetch("https://api.github.com/gists/" + id, {
-            method: "PATCH",
-            body: JSON.stringify({ files: { [GIST_FILENAME]: { content: JSON.stringify(state) } } })
-          });
+          await apiPatchGist(id, JSON.stringify(state));
         }
       }
       setCloudBadge("已同步", true);
       if (!silent) showToast("☁ 已与云端同步完成");
     } catch (err) {
       setCloudBadge("同步失败", false);
-      syncStatusBox.textContent = "同步出错：" + err.message + "（请检查 Token 是否勾选了 gist 权限及网络是否可访问 GitHub）";
+      syncStatusBox.textContent = "同步出错：" + err.message + "（请检查令牌是否勾选了 gists/gist 权限）";
       if (!silent) showToast("云同步失败，点「☁ 云同步」查看原因");
     } finally {
       isSyncing = false;
@@ -3978,10 +4102,7 @@
       setCloudBadge("保存中...", true);
       try {
         const id = await findOrCreateGist();
-        await ghFetch("https://api.github.com/gists/" + id, {
-          method: "PATCH",
-          body: JSON.stringify({ files: { [GIST_FILENAME]: { content: JSON.stringify(state) } } })
-        });
+        await apiPatchGist(id, JSON.stringify(state));
         setCloudBadge("已同步", true);
       } catch (err) {
         setCloudBadge("同步失败", false);
@@ -4053,6 +4174,7 @@
 
   // Sync modal controls
   syncOpenBtn.addEventListener("click", () => {
+    renderProviderUI(cloud.provider || "gitee");
     tokenInput.value = cloud.token || "";
     gistInput.value = cloud.gistId || "";
     syncModal.classList.add("show");
@@ -4063,16 +4185,18 @@
   document.getElementById("bindSyncBtn").addEventListener("click", async () => {
     const tk = tokenInput.value.trim();
     const gid = gistInput.value.trim();
-    if (!tk) { showToast("请先粘贴 GitHub Token"); return; }
+    if (!tk) { showToast("请先粘贴私人令牌 / Token"); return; }
+    const prevProvider = cloud.provider;
+    cloud.provider = modalProvider;
     cloud.token = tk;
-    cloud.gistId = gid;
+    cloud.gistId = (prevProvider === modalProvider) ? gid : gid;
     saveCloudCfg();
     await syncPull(false);
     gistInput.value = cloud.gistId || "";
   });
 
   document.getElementById("pullNowBtn").addEventListener("click", () => {
-    if (!cloud.token) { showToast("请先绑定 Token"); return; }
+    if (!cloud.token) { showToast("请先绑定令牌"); return; }
     syncPull(false);
   });
 
@@ -4081,7 +4205,7 @@
       showToast("请先完成一次绑定同步再复制配对链接");
       return;
     }
-    const payload = btoa(unescape(encodeURIComponent(cloud.token + "|" + cloud.gistId)));
+    const payload = btoa(unescape(encodeURIComponent(cloud.provider + "|" + cloud.token + "|" + cloud.gistId)));
     const base = location.href.split("#")[0];
     const magic = base + "#sync=" + payload;
     try {
@@ -4093,7 +4217,7 @@
   });
 
   document.getElementById("unbindBtn").addEventListener("click", () => {
-    cloud = { token: "", gistId: "" };
+    cloud = { provider: modalProvider, token: "", gistId: "" };
     saveCloudCfg();
     tokenInput.value = "";
     gistInput.value = "";
@@ -4162,7 +4286,15 @@
       try {
         const decoded = decodeURIComponent(escape(atob(h.slice(6))));
         const parts = decoded.split("|");
-        if (parts.length >= 2 && parts[0]) {
+        if (parts.length >= 3 && (parts[0] === "gitee" || parts[0] === "github")) {
+          cloud.provider = parts[0];
+          cloud.token = parts[1];
+          cloud.gistId = parts[2];
+          saveCloudCfg();
+          history.replaceState(null, "", location.pathname + location.search);
+          showToast("📱 自动配对成功，正在拉取云端进度...");
+        } else if (parts.length >= 2 && parts[0]) {
+          cloud.provider = "github";
           cloud.token = parts[0];
           cloud.gistId = parts[1];
           saveCloudCfg();

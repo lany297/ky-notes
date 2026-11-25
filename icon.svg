@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#g)"/>
+  <rect x="44" y="44" width="424" height="424" rx="84" fill="none" stroke="#a7f3d0" stroke-opacity="0.35" stroke-width="10"/>
+  <text x="256" y="295" text-anchor="middle" fill="#ffffff" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="210" font-weight="700">研</text>
+  <text x="256" y="405" text-anchor="middle" fill="#ccfbf1" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="56" font-weight="600">马原 212</text>
+</svg>

@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0f766e">
+<title>毛中特（P65–81）· 纯应试考点通关手册（对应 56 单选 + 59 多选）</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2328;
+    --muted: #59636e;
+    --border: #e5e8ec;
+    --accent: #0f766e;
+    --accent-soft: #ecfdf5;
+    --accent-border: #a7f3d0;
+    --blue: #0369a1;
+    --blue-soft: #f0f9ff;
+    --blue-border: #bae6fd;
+    --ok: #15803d;
+    --ok-bg: #dcfce7;
+    --ok-border: #86efac;
+    --err: #b91c1c;
+    --err-bg: #fef2f2;
+    --err-border: #fecaca;
+    --warn: #b45309;
+    --warn-bg: #fffbeb;
+    --warn-border: #fde68a;
+    --shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  }
+  [data-theme="dark"] {
+    --bg: #111418;
+    --card: #1a1f26;
+    --text: #e6edf3;
+    --muted: #9aa4b2;
+    --border: #2c3440;
+    --accent: #34d399;
+    --accent-soft: #102620;
+    --accent-border: #1e4d3f;
+    --blue: #38bdf8;
+    --blue-soft: #122436;
+    --blue-border: #1e3f5e;
+    --ok: #4ade80;
+    --ok-bg: #122e1d;
+    --ok-border: #1f5c35;
+    --err: #f87171;
+    --err-bg: #36181a;
+    --err-border: #6b262a;
+    --warn: #fbbf24;
+    --warn-bg: #2e220f;
+    --warn-border: #5c4319;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 15.5px;
+    line-height: 1.68;
+    padding-bottom: 84px;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: color-mix(in srgb, var(--card) 94%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 12px;
+  }
+  .topbar-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .brand {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--accent);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .top-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+  .pill {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+  }
+  .pill:active { transform: scale(0.96); }
+  .pill.primary { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; }
+
+  .tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .tab-btn {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    padding: 7px 6px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s ease;
+  }
+  .tab-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  @media (max-width: 520px) { .tab-btn { font-size: 12px; padding: 6px 4px; } }
+
+  .wrap { max-width: 860px; margin: 0 auto; padding: 14px 12px 0; }
+  .hero {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+  }
+  .hero h1 { margin: 0 0 6px; font-size: 18px; line-height: 1.35; }
+  .hero-sub { margin: 0 0 10px; font-size: 13.5px; color: var(--muted); }
+  .progress-bar-wrap { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--muted); }
+  .progress-track { flex: 1; height: 8px; background: var(--bg); border-radius: 999px; overflow: hidden; border: 1px solid var(--border); }
+  .progress-fill { height: 100%; width: 0%; background: var(--accent); transition: width 0.25s ease; }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .jump-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .jump-chip {
+    font-size: 12px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .jump-chip:hover { border-color: var(--accent); color: var(--accent); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 15px 16px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 112px;
+  }
+  .card.mastered { border-color: var(--accent-border); }
+  .card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .card-title-wrap { display: flex; flex-direction: column; gap: 4px; }
+  .card-title { margin: 0; font-size: 16.5px; font-weight: 700; color: var(--text); }
+  .q-ref { display: inline-flex; flex-wrap: wrap; gap: 5px; font-size: 12px; color: var(--accent); font-weight: 600; }
+  .q-tag {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    padding: 1px 7px;
+    border-radius: 999px;
+    color: var(--accent);
+  }
+  .check-btn {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .check-btn.done { background: var(--ok-bg); border-color: var(--ok-border); color: var(--ok); font-weight: 600; }
+
+  .tldr {
+    background: var(--blue-soft);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 10px 10px 0;
+    padding: 9px 12px;
+    margin: 8px 0 10px;
+    font-size: 14.5px;
+  }
+  .formula {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 9px 12px;
+    margin: 8px 0 10px;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .trap-box {
+    background: var(--err-bg);
+    border: 1px solid var(--err-border);
+    border-radius: 10px;
+    padding: 9px 12px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .trap-box strong.label { color: var(--err); }
+  .ok-box {
+    background: var(--ok-bg);
+    border: 1px solid var(--ok-border);
+    border-radius: 10px;
+    padding: 9px 12px;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .ok-box strong.label { color: var(--ok); }
+  .warn-box {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 10px;
+    padding: 9px 12px;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .warn-box strong.label { color: var(--warn); }
+
+  .tbl-wrap { overflow-x: auto; margin: 8px 0; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 440px; }
+  th, td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+  th:last-child, td:last-child { border-right: none; }
+  tr:last-child td { border-bottom: none; }
+  th { background: var(--bg); font-weight: 700; color: var(--text); white-space: nowrap; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 8px 0; }
+  @media (max-width: 600px) { .split { grid-template-columns: 1fr; } }
+  .sub-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+  .sub-card h4 { margin: 0 0 6px; font-size: 14.5px; color: var(--accent); }
+  .sub-card ul, .clean-ul { margin: 4px 0 0; padding-left: 18px; }
+  .sub-card li, .clean-ul li { margin-bottom: 4px; }
+
+  .chain { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0; }
+  .node {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .arrow { color: var(--accent); font-weight: 700; }
+
+  .kill-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--err-bg);
+    border: 1px solid var(--err-border);
+    margin-bottom: 9px;
+    font-size: 14.5px;
+  }
+  .kill-badge {
+    background: var(--err);
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .kill-fix { color: var(--muted); font-size: 13.5px; margin-top: 3px; }
+
+  .quiz-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  .quiz-score { font-weight: 700; font-size: 15px; color: var(--accent); }
+  .quiz-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 15px;
+    margin-bottom: 11px;
+    box-shadow: var(--shadow);
+  }
+  .quiz-q { font-size: 15px; font-weight: 600; margin: 0 0 10px; }
+  .quiz-num {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--accent-border);
+    border-radius: 6px;
+    padding: 0 6px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .quiz-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .q-choice {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    padding: 9px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .q-choice:hover { border-color: var(--accent); }
+  .q-choice.picked-ok { background: var(--ok-bg); border-color: var(--ok-border); color: var(--ok); }
+  .q-choice.picked-err { background: var(--err-bg); border-color: var(--err-border); color: var(--err); }
+  .quiz-fb { margin-top: 9px; padding: 8px 11px; border-radius: 9px; font-size: 13.5px; display: none; }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.ok { background: var(--ok-bg); border: 1px solid var(--ok-border); }
+  .quiz-fb.err { background: var(--err-bg); border: 1px solid var(--err-border); }
+
+  .hl { color: var(--err); font-weight: 700; }
+  .hl-acc { color: var(--accent); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="top-row">
+      <div class="brand">🎯 毛中特纯应试通关 · 导论至第八章（P65–81）</div>
+      <div class="top-actions">
+        <a class="pill" href="./mzt.html" id="toDrillLink">📝 去刷115题</a>
+        <button class="pill" id="themeBtn" type="button">🌙 夜间</button>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="mao" type="button">毛思想 (10卡)</button>
+      <button class="tab-btn" data-tab="zgt" type="button">中特理论 (5卡)</button>
+      <button class="tab-btn" data-tab="traps" type="button">红黑避坑榜</button>
+      <button class="tab-btn" data-tab="quiz" type="button">⚡ 20题快判</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>先刷完这 15 张硬核考点卡，再回去秒杀毛中特全 115 题</h1>
+    <p class="hero-sub">毛中特失分 90% 不是不会背，而是<strong>时期串台、人物张冠李戴、头衔互换</strong>。每张卡直击 P65–81（56 单选 + 59 多选）的真实扣分陷阱，先点完 15 卡 + 过 <strong>⚡ 20 题快判</strong> 再刷题！</p>
+    <div class="progress-bar-wrap">
+      <span id="masterText">通关进度：0 / 15 卡</span>
+      <div class="progress-track"><div class="progress-fill" id="masterFill"></div></div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 1: 毛泽东思想 (导论 + 1~4章) ==================== -->
+  <section class="panel active" id="panel-mao">
+    <div class="jump-row">
+      <a class="jump-chip" href="#m-1">1.中国化与形成轴</a>
+      <a class="jump-chip" href="#m-2">2.活的灵魂与人物</a>
+      <a class="jump-chip" href="#m-3">3.总路线与几大问题</a>
+      <a class="jump-chip" href="#m-4">4.两步走vs左右倾</a>
+      <a class="jump-chip" href="#m-5">5.三大纲领</a>
+      <a class="jump-chip" href="#m-6">6.农村道路与三大法宝</a>
+      <a class="jump-chip" href="#m-7">7.过渡时期总路线</a>
+      <a class="jump-chip" href="#m-8">8.三大改造性质表</a>
+      <a class="jump-chip" href="#m-9">9.十大关系与正处</a>
+      <a class="jump-chip" href="#m-10">10.工业化与边界</a>
+    </div>
+
+    <!-- Card 1 -->
+    <article class="card" id="m-1" data-card="m-1">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 1｜导论 + 毛泽东思想形成 4 阶段时间轴</h3>
+          <div class="q-ref"><span class="q-tag">单选 1–4, 6</span><span class="q-tag">多选 1–3, 6</span></div>
+        </div>
+        <button class="check-btn" data-card="m-1" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>阶段</th><th>历史时期</th><th>标志性思想 / 著作</th></tr></thead>
+          <tbody>
+            <tr><td><strong>开始萌芽</strong></td><td>大革命时期</td><td>提出<strong>新民主主义革命基本思想</strong>（《各阶级分析》《湖南农民》：分析各阶级、强调领导农民斗争）</td></tr>
+            <tr><td><strong>初步形成</strong></td><td>土地革命战争时期</td><td>提出<strong>农村包围城市、武装夺取政权</strong>道路 + <strong>工农武装割据</strong>（《反对本本主义》1930年写于此时期）</td></tr>
+            <tr><td><strong>走向成熟</strong></td><td>抗日战争时期</td><td>系统阐述<strong>新民主主义理论</strong>（1938 六届六中全会《论新阶段》正式提“马克思主义的中国化”；1945 七大写进党章）</td></tr>
+            <tr><td><strong>继续发展</strong></td><td>解放战争 &amp; 建国后</td><td>社会主义改造理论 + 社会主义建设初步探索理论</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 4 个必排死坑：</strong><br>
+        1. “<span class="hl">所有马克思主义中国化理论成果都是关于革命、建设、改革的经验总结</span>” → <strong>错！</strong>毛思想不涉及“改革”，中特理论不涉及“革命”（单 2）。<br>
+        2. “<span class="hl">找到放之四海而皆准的模式</span>” / “<span class="hl">让中国实践去符合理论</span>” → <strong>错！</strong>没有抽象马克思主义，只有具体马克思主义，是按中国特点应用理论（多 1、2）。<br>
+        3. <strong>工农武装割据</strong>属于<strong>土地革命时期（初步形成）</strong>，绝不是大革命时期“萌芽”的内容（多 3）。<br>
+        4. 毛思想围绕的主题 = <strong>中国革命和建设</strong>（不是战争与革命，也不是中特）。
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card" id="m-2" data-card="m-2">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 2｜活的灵魂 + 易混“头衔/人物名言”归属表</h3>
+          <div class="q-ref"><span class="q-tag">单选 5, 7, 8</span><span class="q-tag">多选 4, 5, 22</span></div>
+        </div>
+        <button class="check-btn" data-card="m-2" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tldr">
+        <strong>活的灵魂</strong>（实事求是、群众路线、独立自主）= 贯穿毛思想的<strong>立场、观点和方法</strong>，是<strong>最能体现毛思想理论本质特点</strong>的内容（单 5）。
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>头衔 / 定位（千万别互换！）</th><th>唯一正确主语</th></tr></thead>
+          <tbody>
+            <tr><td>毛泽东思想的基本点和<strong>精髓</strong></td><td><strong>实事求是</strong></td></tr>
+            <tr><td><strong>党的生命线和根本工作路线</strong> / 最大政治优势</td><td><strong>群众路线</strong> / 密切联系群众（不是独立自主！）</td></tr>
+            <tr><td><strong>中华民族精神之魂</strong> / 立党立国重要原则</td><td><strong>独立自主</strong>（1930《反对本本主义》最初明确表述）</td></tr>
+            <tr><td>一个国家民族发展进步的不竭动力</td><td><strong>创新</strong></td></tr>
+            <tr><td>中共区别于其他政党的显著标志（七大三大作风）</td><td><strong>理论联系实际 + 密切联系群众 + 批评与自我批评</strong>（+ 勇于自我革命）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="warn-box">
+        <strong class="label">👤 人物名言防串台（多 4 必考！）：</strong><br>
+        • <strong>毛泽东</strong>：「没有调查，没有发言权」（《反对本本主义》）、「用马克思主义之“矢”射中国革命之“的”」（延安整风）。<br>
+        • <strong>邓小平</strong>：「一个党，一个国家，一个民族，如果一切从本本出发，那它就不能前进」。<br>
+        • <strong>陈云</strong>：「不唯上、不唯书、只唯实，交换、比较、反复」。<br>
+        • <strong>两个务必（谦虚谨慎不骄不躁）</strong>：是 <strong>1949 七届二中全会</strong>提的，<strong>不是 1945 中共七大</strong>！（多 22）
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card" id="m-3" data-card="m-3">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 3｜新民主主义总路线 + “几大问题”一表秒杀</h3>
+          <div class="q-ref"><span class="q-tag">单选 9–13, 17, 19</span><span class="q-tag">多选 7, 12, 14, 18</span></div>
+        </div>
+        <button class="check-btn" data-card="m-3" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>考题问法（盯紧定语！）</th><th>唯一正确对应</th></tr></thead>
+          <tbody>
+            <tr><td>近代中国<strong>最基本国情</strong> / 结果</td><td><strong>半殖民地半封建社会</strong> → 政治经济文化发展<strong>极端不平衡</strong>（帝国主义不是直接统治）</td></tr>
+            <tr><td>区分新、旧民主革命的<strong>根本标志</strong></td><td><strong>革命领导阶级（领导权）</strong>的变化（无产阶级 vs 资产阶级）</td></tr>
+            <tr><td>中国革命的<strong>首要问题</strong></td><td><strong>分清敌友</strong></td></tr>
+            <tr><td>中国革命的<strong>中心问题</strong> / 新民主主义理论<strong>核心问题</strong></td><td><strong>无产阶级领导权问题</strong></td></tr>
+            <tr><td>无产阶级领导权的<strong>中心问题</strong> / 中国革命<strong>基本问题</strong></td><td><strong>农民问题</strong>（农民是主力军，但<strong>最进步/领导阶级是无产阶级</strong>！）</td></tr>
+            <tr><td>新民主主义革命的<strong>主要内容</strong></td><td><strong>没收封建地主土地归农民所有</strong>（土地革命）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ok-box">
+        <strong class="label">✅ 3 个高频细节：</strong><br>
+        1. <strong>1948《在晋绥干部会议上的讲话》</strong>“完整”概括总路线 = 在革命对象中增加了<strong>官僚资本主义</strong>；反它<strong>不是因为它是资本主义</strong>，而是因为它是<strong>买办的、封建的国家垄断资本主义</strong>（单 11、多 12）。<br>
+        2. <strong>“两头小中间大”</strong>（多 18）：<strong>两头小</strong> = 无产阶级 + 地主大资产阶级；<strong>中间大</strong> = <strong>农民阶级 + 城市小资产阶级 + 民族资产阶级</strong>（千万别选无产阶级！）。<br>
+        3. 新民主主义革命 4 个“新”特点（多 7 全选）：世界无产阶级社会主义革命一部分 + 中共领导 + 马列指导 + 前途是社会主义。
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="card" id="m-4" data-card="m-4">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 4｜中国革命“两步走” vs 左倾/右倾错误</h3>
+          <div class="q-ref"><span class="q-tag">单选 14–16, 18</span><span class="q-tag">多选 9</span></div>
+        </div>
+        <button class="check-btn" data-card="m-4" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>观点</th><th>性质</th><th>错在哪？怎么一眼认出？</th></tr></thead>
+          <tbody>
+            <tr><td><strong>“一次革命论” / 毕其功于一役 / 无间断革命</strong></td><td><span class="hl">“左”倾错误</span></td><td>只见联系、<strong>混淆界限</strong>：在民主革命阶段就急着顺手把民族资产阶级也一起推翻（单 14、18）</td></tr>
+            <tr><td><strong>“二次革命论”</strong>（陈独秀）</td><td><span class="hl">右倾错误</span></td><td>只见区别、<strong>割裂联系</strong>：主张资产阶级统帅民主革命，实质是<strong>放弃无产阶级领导权</strong>（单 15、16）</td></tr>
+            <tr><td><strong>正确路线：“文章上篇与下篇”</strong></td><td><span class="hl-acc">正确</span></td><td>民主革命是社会主义革命的<strong>必要准备</strong>，社会主义革命是民主革命的<strong>必然趋势</strong>；中间<strong>不容横插独立资本主义阶段</strong>（多 9）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="card" id="m-5" data-card="m-5">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 5｜新民主主义三大纲领（政治 / 经济 / 文化）</h3>
+          <div class="q-ref"><span class="q-tag">单选 19–22</span><span class="q-tag">多选 10–13</span></div>
+        </div>
+        <button class="check-btn" data-card="m-5" type="button">○ 标为已懂</button>
+      </div>
+      <div class="split">
+        <div class="sub-card">
+          <h4>政治纲领（多 10 全选）</h4>
+          <ul>
+            <li><strong>国体：</strong>各革命阶级联合专政</li>
+            <li><strong>政体：</strong>民主集中制的人民代表大会制度</li>
+            <li><strong>性质：</strong>过渡形式的国家；<strong>人民当家作主</strong>是核心内容与基本准则</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h4>文化纲领（单 22 必考）</h4>
+          <ul>
+            <li><strong>民族的</strong>：<strong>内容</strong> = 反帝压迫、主张民族尊严独立；<strong>形式</strong> = 民族风格、中国作风气派</li>
+            <li><strong>科学的</strong>：反对封建思想和迷信思想</li>
+            <li><strong>大众的</strong>：民主的，为广大工农大众服务</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ok-box">
+        <strong class="label">✅ 经济纲领只有 3 条（多 11 必排“没收外国在华资本”！）：</strong><br>
+        ① 没收封建地主土地归<strong>农民所有</strong>（<strong>主要内容</strong>；土改直接任务 = <strong>满足贫雇农要求</strong>，土地变农民私产不是归国家！单 20）<br>
+        ② 没收官僚垄断资本归<strong>新民主主义国家所有</strong>（题中应有之义）<br>
+        ③ <strong>保护民族工商业</strong>（<strong>极具特色</strong>！原因：联系较少、先进生产方式、有益社会；❌ 民资企业<strong>从未</strong>在社会经济中占主要地位！多 13）
+      </div>
+    </article>
+
+    <!-- Card 6 -->
+    <article class="card" id="m-6" data-card="m-6">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 6｜农村包围城市 + 三大法宝（全书串台最密集！）</h3>
+          <div class="q-ref"><span class="q-tag">单选 23–28</span><span class="q-tag">多选 8, 15–23</span></div>
+        </div>
+        <button class="check-btn" data-card="m-6" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>高频易混组</th><th>正确组合</th><th>必排串台干扰项</th></tr></thead>
+          <tbody>
+            <tr><td><strong>走农村道路的客观依据（多 15）</strong></td><td>内无民主外无独立 + 农民占绝大多数是主力军</td><td>❌ 无产阶级领导（俄国也是无产阶级却走城市）；❌ 封建矛盾最主要（帝华矛盾才是最主要！）</td></tr>
+            <tr><td><strong>工农武装割据 3 要素（单 23/多 17）</strong></td><td>土地革命（基本内容）+ 武装斗争（主要形式）+ 根据地（战略阵地与<strong>依托</strong>）</td><td>❌ 统一战线不是“依托”！</td></tr>
+            <tr><td><strong>三大法宝（单 25）</strong></td><td><strong>统一战线 + 武装斗争 + 党的建设</strong></td><td>❌ 别和工农武装割据、活的灵魂、三大作风混！</td></tr>
+            <tr><td><strong>统战：可能性 vs 必要性（单 26）</strong></td><td><strong>可能性</strong> = 半殖半封社会<strong>诸多矛盾交织</strong>；<strong>必要性</strong> = 阶级状况（两头小）+ 革命长期残酷</td><td>问“可能”选矛盾交织，问“必要”选阶级状况/长期残酷！</td></tr>
+            <tr><td><strong>统战两个联盟 &amp; 国共合作（单 27/多 19）</strong></td><td><strong>基础联盟</strong> = 工人+农民+知识分子及其他劳动者。<br><strong>国共合作统战</strong> = <strong>国民革命 + 抗日民族</strong>（2 个）</td><td>❌ 工农民主统战、人民民主统战均非国共合作！</td></tr>
+            <tr><td><strong>实现同盟者领导的 2 条件（多 8）</strong></td><td>① 率领向共同敌人坚决斗争取胜 + ② 给物质利益 + 政治教育</td><td>❌ 发展进步争取中间孤立顽固、有理有利有节（抗日统战策略，串台！）</td></tr>
+            <tr><td><strong>军队政治工作 3 原则（多 21）</strong></td><td><strong>官兵一致 + 军民一致 + 瓦解敌军优待俘虏</strong></td><td>❌ “支部建在连上”属于“党对军队绝对领导”，不是政治工作原则！</td></tr>
+            <tr><td><strong>革命时期党建经验（单 28/多 23）</strong></td><td><strong>思想建设放首位</strong> + 组织作风建设 + 联系政治路线</td><td>❌ <strong>无“执政能力建设”</strong>（建国执政后尤其是十六大后才强调）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- Card 7 -->
+    <article class="card" id="m-7" data-card="m-7">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 7｜新民主主义社会 + 过渡时期总路线</h3>
+          <div class="q-ref"><span class="q-tag">单选 29–31</span><span class="q-tag">多选 24–28, 37</span></div>
+        </div>
+        <button class="check-btn" data-card="m-7" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>社会性质（多 24）：</strong>属于社会主义体系的<strong>过渡性社会形态</strong>（既有社会主义因素又有非社会主义因素；❌ <strong>不是独立社会形态</strong>）。</li>
+        <li><strong>经济成分（单 29 / 多 25）：</strong>5 种（国营、合作社、个体、私人资本、国家资本），<strong>无封建地主经济</strong>；<strong>3 种主要成分</strong> = 社会主义 + 个体 + 资本主义；<strong>国营经济居领导地位</strong>，个体经济占绝对优势。</li>
+        <li><strong>主要矛盾时间线（单 30 / 多 26）：</strong>建国→土改前 = 人民大众 vs 帝封官残余；<strong>土改完成后（1952底）</strong> = <strong>工人阶级 vs 资产阶级（社 vs 资两条道路）</strong>；1956 改造完成后 = 八大主要矛盾（经济文化需要 vs 落后现状）。</li>
+        <li><strong>过渡时期总路线“一化三改”（单 31 / 多 27, 28, 37）：</strong><strong>主体 = 社会主义工业化</strong>，两翼 = 三大改造；体现<strong>建设与改造同时并举</strong>、解放与发展生产力统一、变革生产关系与发展生产力统一（从建国初“一举过渡”转为“<strong>并举过渡、逐步过渡</strong>”，❌ 坚持“一举过渡”必排！）。</li>
+      </ul>
+    </article>
+
+    <!-- Card 8 -->
+    <article class="card" id="m-8" data-card="m-8">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 8｜三大改造“性质三级跳”对比表（全章最易混！）</h3>
+          <div class="q-ref"><span class="q-tag">单选 32–37</span><span class="q-tag">多选 29–36, 38</span></div>
+        </div>
+        <button class="check-btn" data-card="m-8" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>层级性质</th><th>农业（原则：自愿互利/典型示范/国家帮助）</th><th>手工业</th><th>资本主义工商业（方法：和平赎买）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>第一步：萌芽 / 具社会主义因素</strong></td><td>互助组</td><td>手工业供销小组</td><td><strong>初级形式国家资本主义</strong>（<strong>企业外部合作</strong>；利润：四马分肥）</td></tr>
+            <tr><td><strong>第二步：半社会主义性质</strong></td><td><strong>初级农业生产合作社</strong></td><td><strong>手工业供销合作社</strong></td><td><strong>个别企业公私合营</strong>（企业内部合作；利润：<strong>四马分肥</strong>）</td></tr>
+            <tr><td><strong>第三步：完全社会主义 / 国营</strong></td><td>高级农业生产合作社</td><td>手工业生产合作社</td><td><strong>全行业公私合营</strong>（利润：<strong>定股定息</strong>；基本成为<strong>国营</strong>企业）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 6 个必排串台死坑：</strong><br>
+        1. <strong>农业改造原则</strong>（自愿互利、典型示范、国家帮助）绝不适用于工商业；农业改造时也没有“农业生产责任制”（那是 1978 后！多 29、36）。<br>
+        2. <strong>国家资本主义</strong>非独立经济形态，性质取决于<strong>所在国家性质</strong>（非生产力水平！），它是<strong>私资→国营</strong>的过渡形式（个体→集体是<strong>合作社经济</strong>！多 32）。<br>
+        3. <strong>和平赎买</strong> = 让资本家在一定年限内从企业经营所得拿部分利润，将私企变<strong>国营</strong>（❌ 非国家付巨额补偿资金，非变集体企业！多 33）。<br>
+        4. 三大改造胜利原因：未破坏生产力 + 未引起社会动荡（❌ 当时追求了单一公有制、还没搞清发展阶段理论！单 37）。<br>
+        5. 1956 社会主义基本制度确立时，“<strong>第二次结合</strong>”只是<strong>刚刚开始</strong>，绝不是“已经实现”（多 38）。<br>
+        6. 民主革命是社会主义革命的前提，全行业公私合营绝不是“完成民主革命遗留任务的前提”（多 34）。
+      </div>
+    </article>
+
+    <!-- Card 9 -->
+    <article class="card" id="m-9" data-card="m-9">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 9｜第四章初步探索：《论十大关系》&amp;《正处》</h3>
+          <div class="q-ref"><span class="q-tag">单选 38–43</span><span class="q-tag">多选 39–42</span></div>
+        </div>
+        <button class="check-btn" data-card="m-9" type="button">○ 标为已懂</button>
+      </div>
+      <div class="split">
+        <div class="sub-card">
+          <h4>1956《论十大关系》（良好开端）</h4>
+          <ul>
+            <li><strong>根本思想：</strong>根据本国情况走自己的道路（以苏为鉴）</li>
+            <li><strong>基本方针：</strong><strong>调动一切积极因素</strong>为社会主义事业服务（❌ 别混 1950 “不要四面出击”）</li>
+            <li>提出“<strong>向外国学习</strong>”口号（❌ 还没提“实行改革开放”！多 40）</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h4>1957《关于正确处理人民内部矛盾的问题》</h4>
+          <ul>
+            <li><strong>国家政治生活主题：</strong><strong>正确处理人民内部矛盾</strong>（不是两类矛盾、不是敌我矛盾）</li>
+            <li><strong>基本矛盾性质/情况：</strong><strong>非对抗性</strong>、<strong>“又相适应又相矛盾”</strong>，可通过制度自我完善解决</li>
+            <li><strong>解决总方法：</strong>敌我用专政，人民内部用民主（❌ 不是所有矛盾都用民主！）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ok-box">
+        <strong class="label">✅ 人民内部矛盾 4 大领域具体方针（单 43 / 多 42 必背）：</strong><br>
+        • <strong>政治思想领域</strong>：「团结—批评—团结」（❌ “惩前毖后、治病救人”是延安整风方针；“有理、有利、有节”是抗战对顽固派方针！）<br>
+        • <strong>物质利益分配</strong>：统筹兼顾、适当安排<br>
+        • <strong>科学文化领域</strong>：「百花齐放、百家争鸣」<br>
+        • <strong>共产党与民主党派</strong>：「长期共存、互相监督」
+      </div>
+    </article>
+
+    <!-- Card 10 -->
+    <article class="card" id="m-10" data-card="m-10">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 10｜中国工业化道路 + 初步探索成果与边界</h3>
+          <div class="q-ref"><span class="q-tag">单选 44</span><span class="q-tag">多选 39, 43–45</span></div>
+        </div>
+        <button class="check-btn" data-card="m-10" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>走中国工业化道路核心（单 44）：</strong>正确处理<strong>重工业和轻工业、农业</strong>的关系 → 以农业为基础、工业为主导、<strong>农轻重为序</strong>。</li>
+        <li><strong>“两条腿走路”方针（多 43）：</strong>重/轻工业 + 中央/地方 + 沿海/内地 + 大/小型企业同时并举（❌ <strong>绝没有“外资企业和内资企业同时并举”</strong>！）。</li>
+        <li><strong>毛时期提出的理论（多 44）：</strong>农轻重为序 + 社会主义分<strong>不发达 / 比较发达</strong>两阶段 + <strong>“两步走”</strong>实现四个现代化。</li>
+      </ul>
+      <div class="trap-box">
+        <strong class="label">❌ 4 个“时代超前”必排项（绝不属于毛泽东初步探索时期！）：</strong><br>
+        1. “<span class="hl">彻底摆脱苏联模式的影响</span>” → 错！只是<strong>开始摆脱</strong>，并未彻底摆脱（多 39、45）。<br>
+        2. “<span class="hl">开始重新认识什么是社会主义、怎样建设社会主义</span>” / “<span class="hl">明确通过改革进一步解放生产力</span>” → 错！那是<strong>邓小平</strong>的贡献（多 39）。<br>
+        3. “<span class="hl">发展面向现代化、面向世界、面向未来的，民族的科学的大众的社会主义文化</span>” → 错！那是后来提的，不是毛时期（多 44）。
+      </div>
+    </article>
+  </section>
+
+  <!-- ==================== TAB 2: 中特理论体系 (5~8章) ==================== -->
+  <section class="panel" id="panel-zgt">
+    <div class="jump-row">
+      <a class="jump-chip" href="#z-1">11.理论体系总对照表</a>
+      <a class="jump-chip" href="#z-2">12.邓论本质/初级阶段/改革</a>
+      <a class="jump-chip" href="#z-3">13.社会主义市场经济</a>
+      <a class="jump-chip" href="#z-4">14.三个代表</a>
+      <a class="jump-chip" href="#z-5">15.科学发展观</a>
+    </div>
+
+    <!-- Card 11 -->
+    <article class="card" id="z-1" data-card="z-1">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 11｜中特理论体系四大成果“课题 + 里程碑”总表</h3>
+          <div class="q-ref"><span class="q-tag">单选 45–47, 53</span><span class="q-tag">多选 46, 47, 54, 57</span></div>
+        </div>
+        <button class="check-btn" data-card="z-1" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>理论成果</th><th>回答的核心课题（必背！）</th><th>关键时间节点 &amp; 定位</th></tr></thead>
+          <tbody>
+            <tr><td><strong>邓小平理论</strong></td><td><strong>什么是社会主义、怎样建设社会主义</strong>（首要的基本理论问题）</td><td>• 十一届三中全会：伟大转折<br>• <strong>十二大（1982）</strong>：首提“<strong>建设有中国特色的社会主义</strong>”主题<br>• 十三大：轮廓形成<br>• <strong>1992 南方谈话</strong>：<strong>逐步走向成熟</strong><br>• 定位：中特理论体系<strong>开篇之作</strong></td></tr>
+            <tr><td><strong>“三个代表”重要思想</strong></td><td>进一步回答社会主义问题 + 创造性回答<strong>建设什么样的党、怎样建设党</strong></td><td>多 57 全选</td></tr>
+            <tr><td><strong>科学发展观</strong></td><td>创造性回答新形势下<strong>实现什么样的发展、怎样发展</strong></td><td>多 58、59 全选</td></tr>
+            <tr><td><strong>习近平新时代中特思想</strong></td><td>新时代坚持和发展什么样的中国特色社会主义、怎样坚持和发展…</td><td>注意和邓论/三代/科发区分！</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 必排死坑（多 54）：</strong>说邓小平理论是“中国<strong>革命</strong>、建设、改革的科学指南” → <strong>错！</strong>邓小平理论形成于改革开放新时期，<strong>不涉及革命</strong>！
+      </div>
+    </article>
+
+    <!-- Card 12 -->
+    <article class="card" id="z-2" data-card="z-2">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 12｜邓小平理论 5 大硬核考点（精髓/拨乱反正/本质/初级阶段/改革）</h3>
+          <div class="q-ref"><span class="q-tag">单选 48–50</span><span class="q-tag">多选 48–51, 53</span></div>
+        </div>
+        <button class="check-btn" data-card="z-2" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>精髓（单 48）：</strong><strong>解放思想、实事求是</strong>。</li>
+        <li><strong>新时期最根本的拨乱反正（单 49）：</strong><strong>坚持以经济建设为中心</strong>（区分：四项基本原则 = 立国之本；改革开放 = 强国之路）。</li>
+        <li><strong>社会主义本质意义（多 48 全选）：</strong>坚持原则又赋时代特色 + 反映人民利益时代要求 + 廓清模糊观念 + 摆脱拘泥具体模式倾向。</li>
+        <li><strong>社会主义初级阶段理论（多 50）：</strong>揭示当代中国历史方位，提供<strong>总依据</strong>、是重大突破、清醒认识长期复杂艰巨性（❌ 它<strong>不等于</strong>回答“首要基本理论问题”——首要问题是“什么是/怎样建设社会主义”！）。</li>
+        <li><strong>改革的性质（单 50）：</strong>不是修补、不是推翻基本制度，而是<strong>社会主义制度的自我完善和发展</strong>。</li>
+        <li><strong>“三个有利于”标准（多 51）：</strong>① 发展社会主义社会<strong>生产力</strong> + ② 增强社会主义国家<strong>综合国力</strong> + ③ 提高<strong>人民生活水平</strong>（❌ <strong>不含“完善社会主义生产关系”</strong>！）。</li>
+        <li><strong>1992 南方谈话核心论断（多 53 全选）：</strong>社会主义可以搞市场经济 + 不改革开放发展经济改善民生就没出路 + 三个有利于 + 革命是解放生产力，改革也是解放生产力。</li>
+      </ul>
+    </article>
+
+    <!-- Card 13 -->
+    <article class="card" id="z-3" data-card="z-3">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 13｜社会主义市场经济理论（3 句定死！）</h3>
+          <div class="q-ref"><span class="q-tag">单选 51, 52</span><span class="q-tag">多选 52</span></div>
+        </div>
+        <button class="check-btn" data-card="z-3" type="button">○ 标为已懂</button>
+      </div>
+      <div class="formula">
+        核心突破：计划经济和市场经济都是 <span class="hl-acc">经济手段 / 资源配置手段</span>，本身 <span class="hl-acc">不具有社会制度属性</span>！
+      </div>
+      <ul class="clean-ul">
+        <li>✅ 计划与市场<strong>不是划分社会制度的标志</strong>（单 52 排“经济制度/生产关系范畴”以及“经济增长方式”——经济增长方式指粗放型/集约型！）。</li>
+        <li>✅ 十四大确立建立社会主义市场经济体制的理论重大突破 = 认识到<strong>市场经济本身不具有制度属性</strong>（单 51）。</li>
+      </ul>
+      <div class="trap-box">
+        <strong class="label">❌ 必排死坑（多 52 D 项）：</strong>说“<span class="hl">市场经济和不同的社会制度结合所表现出的性质是相同的</span>” → <strong>错！</strong>市场经济<strong>本身</strong>无制度属性，但一旦跟不同社会制度结合，表现出来的性质是<strong>不同的</strong>（社会主义市场经济坚持公有制主体、共同富裕，与资本主义不同）！
+      </div>
+    </article>
+
+    <!-- Card 14 -->
+    <article class="card" id="z-4" data-card="z-4">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 14｜“三个代表”重要思想（改革发展稳定 + 加入世贸）</h3>
+          <div class="q-ref"><span class="q-tag">单选 53, 54</span><span class="q-tag">多选 55–57</span></div>
+        </div>
+        <button class="check-btn" data-card="z-4" type="button">○ 标为已懂</button>
+      </div>
+      <div class="formula">
+        改革 = <strong>动力</strong> ｜ 发展 = <strong>目的</strong>（执政兴国第一要务） ｜ 稳定 = <strong>前提</strong> ｜ 重要结合点 = <span class="hl-acc">不断改善人民生活</span>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>处理三者关系原则（单 54 / 多 55 全选）：</strong>把改革力度、发展速度、社会可承受程度统一起来；在社会稳定中推进改革发展，通过改革发展促进社会稳定；<strong>不断改善人民生活</strong>是重要结合点。</li>
+        <li><strong>2001 年加入世界贸易组织（多 56 全选）：</strong>获得参与制定规则和竞争有利位置 + 打开对外开放新天地 + 从被动接受/主动接轨成长为重要参与者 + 对外开放里程碑、进入新阶段。</li>
+      </ul>
+    </article>
+
+    <!-- Card 15 -->
+    <article class="card" id="z-5" data-card="z-5">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 15｜科学发展观（四定位 + 精神实质 + 政治道路）</h3>
+          <div class="q-ref"><span class="q-tag">单选 55, 56</span><span class="q-tag">多选 58, 59</span></div>
+        </div>
+        <button class="check-btn" data-card="z-5" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>维度（单选最爱考张冠李戴！）</th><th>唯一对应</th></tr></thead>
+          <tbody>
+            <tr><td><strong>第一要义</strong></td><td>推动经济社会<strong>发展</strong></td></tr>
+            <tr><td><strong>核心立场</strong></td><td><strong>以人为本</strong></td></tr>
+            <tr><td><strong>基本要求</strong>（单 55）</td><td><strong>全面协调可持续</strong></td></tr>
+            <tr><td><strong>根本方法</strong></td><td><strong>统筹兼顾</strong></td></tr>
+            <tr><td><strong>最鲜明的精神实质</strong>（多 59 全选）</td><td><strong>解放思想、实事求是、与时俱进、求真务实</strong></td></tr>
+            <tr><td><strong>中国特色社会主义政治发展道路最根本</strong>（单 56）</td><td><strong>党的领导 + 人民当家作主 + 依法治国</strong> 有机统一</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+
+  <!-- ==================== TAB 3: RED/BLACK TRAPS ==================== -->
+  <section class="panel" id="panel-traps">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">🚫 考场黑榜：毛中特（P65–81）看见这 16 句话直接划掉！</h3>
+        </div>
+      </div>
+      <div class="kill-item"><span class="kill-badge">必排 1</span><div><strong>找到放之四海而皆准的模式 / 使中国实践去符合马克思主义理论</strong><div class="kill-fix">真相：没有抽象马克思主义，是按中国特点应用马克思主义，不能本末倒置。（多 1、2）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 2</span><div><strong>马克思主义中国化理论成果都是关于“革命、建设、改革”的经验总结 / 邓论是革命指南</strong><div class="kill-fix">真相：毛思想不涉及改革，邓小平理论等中特理论不涉及革命！（单 2、多 54）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 3</span><div><strong>大革命萌芽时期提出“工农武装割据” / 七大提出“谦虚谨慎不骄不躁”</strong><div class="kill-fix">真相：工农武装割据=土地革命时期；两个务必=1949 七届二中全会。（多 3、22）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 4</span><div><strong>独立自主是党的生命线和根本工作路线 / 群众路线是中华民族精神之魂</strong><div class="kill-fix">真相：反了！生命线根本工作路线 = 群众路线；民族精神之魂 = 独立自主。（单 7、多 5）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 5</span><div><strong>农民阶级是近代中国最进步的阶级 / 无产阶级属于“两头小中间大”的“中间”</strong><div class="kill-fix">真相：最进步和领导阶级是无产阶级，且无产阶级属于“两头小”的一头！（多 14、18）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 6</span><div><strong>反官僚资本是因为它是资本主义 / 经济纲领含“没收外国在华资本” / 民资占主要地位</strong><div class="kill-fix">真相：反官僚资本因它是买办封建国家垄断资本；经济纲领只有三条（土改/官僚资本/保护民资）；民资从未占主要地位。（多 11–13）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 7</span><div><strong>土改把土地归国家所有 / 统一战线是武装斗争和土地革命的依托</strong><div class="kill-fix">真相：土改归农民私产；农村革命根据地才是“依托”！（单 20、多 17）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 8</span><div><strong>新民主主义革命时期党的建设经验包含“执政能力建设” / 军队政治工作含“支部建在连上”</strong><div class="kill-fix">真相：执政能力建设是建国执政后；支部建在连上属于“党对军队绝对领导”。（多 21、23）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 9</span><div><strong>新民主主义社会是独立的社会形态 / 包含封建地主经济</strong><div class="kill-fix">真相：它是过渡性社会形态；五种经济成分里早已不含封建地主经济。（多 24、25）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 10</span><div><strong>和平赎买 = 国家付巨额补偿资金 / 私企改为集体企业</strong><div class="kill-fix">真相：是一定年限内让资本家分一部分企业利润，最终改为国营企业。（多 33）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 11</span><div><strong>三大改造坚持“一举过渡” / 农业改造推广生产责任制 / 1956 实现了“第二次结合”</strong><div class="kill-fix">真相：是“并举过渡、逐步过渡”；责任制在 1978 后；1956 第二次结合才刚开始！（多 36–38）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 12</span><div><strong>《论十大关系》探索实行改革开放 / 初步探索彻底摆脱苏联模式 / 提出外资内资并举</strong><div class="kill-fix">真相：毛提了“向外国学习”但没提改革开放；只是开始摆脱苏联模式；没提外资内资并举！（多 40、43、45）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 13</span><div><strong>社会主义基本矛盾是对抗性的 / 所有矛盾都用民主方法解决</strong><div class="kill-fix">真相：基本矛盾是非对抗性、“又相适应又相矛盾”；敌我矛盾用专政方法！（单 42、多 41）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 14</span><div><strong>社会主义初级阶段理论直接回答了邓论首要的基本理论问题</strong><div class="kill-fix">真相：初级阶段提供“总依据”；首要基本问题是“什么是社会主义、怎样建设社会主义”。（多 50）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 15</span><div><strong>“三个有利于”包含“是否有利于完善社会主义的生产关系”</strong><div class="kill-fix">真相：只有生产力 + 综合国力 + 人民生活水平三项！（多 51）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 16</span><div><strong>市场经济与不同社会制度结合后表现出的性质是相同的 / 计划与市场属经济增长方式</strong><div class="kill-fix">真相：市场经济本身无制度属性，但结合不同制度后性质不同；属资源配置手段（经济增长方式=粗放/集约）。（单 52、多 52）</div></div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">🔀 12 组必考“张冠李戴 / 时期串台”总对照表</h3>
+        </div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>易混 A 项</th><th>易混 B 项（考场专爱互换！）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>六届六中全会（1938）</strong>：首次提出“马克思主义的中国化”</td><td><strong>中共七大（1945）</strong>：毛泽东思想确立为指导思想并写进党章</td></tr>
+            <tr><td><strong>毛思想萌芽</strong>：大革命时期（新民主主义革命基本思想）</td><td><strong>毛思想初步形成</strong>：土地革命时期（农村包围城市 + 工农武装割据）</td></tr>
+            <tr><td><strong>“一次革命论”（毕其功于一役）</strong>：“左”倾，混淆界限</td><td><strong>“二次革命论”</strong>：右倾，割裂联系、放弃无产阶级领导权</td></tr>
+            <tr><td><strong>工农武装割据 3 要素</strong>：土地革命 + 武装斗争 + 根据地建设</td><td><strong>三大法宝</strong>：统一战线 + 武装斗争 + 党的建设</td></tr>
+            <tr><td><strong>统战可能性</strong>：半殖半封社会交织的诸多矛盾</td><td><strong>统战必要性</strong>：阶级状况（两头小中间大）+ 革命长期残酷不平衡</td></tr>
+            <tr><td><strong>国共合作统战</strong>：国民革命联合战线 + 抗日民族统一战线</td><td><strong>非国共合作统战</strong>：工农民主统一战线 + 人民民主统一战线</td></tr>
+            <tr><td><strong>农业改造原则</strong>：自愿互利、典型示范、国家帮助</td><td><strong>工商业改造</strong>：和平赎买 + 国家资本主义 + 把人改造成劳动者</td></tr>
+            <tr><td><strong>初级国家资本 / 个别公私合营</strong>：利润均行“四马分肥”</td><td><strong>全行业公私合营</strong>：实行“定股定息”，基本成国营</td></tr>
+            <tr><td><strong>合作社经济</strong>：个体经济 → 社会主义集体经济过渡</td><td><strong>国家资本主义经济</strong>：私人资本主义 → 社会主义国营经济过渡</td></tr>
+            <tr><td><strong>政治思想领域人民内部矛盾</strong>：团结—批评—团结</td><td><strong>延安整风</strong>：惩前毖后治病救人；<strong>抗战对顽固派</strong>：有理有利有节</td></tr>
+            <tr><td><strong>以经济建设为中心</strong>：新时期最根本的拨乱反正</td><td><strong>四项基本原则</strong>：立国之本；<strong>改革开放</strong>：强国之路</td></tr>
+            <tr><td><strong>邓论 / 三代 / 科发课题</strong>：社会主义 / 建党 / 发展</td><td><strong>科学发展观四定位</strong>：发展(要义)/以人为本(核心)/全面协调可持续(要求)/统筹兼顾(方法)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 4: 20-ITEM FAST QUIZ ==================== -->
+  <section class="panel" id="panel-quiz">
+    <div class="quiz-header">
+      <div>
+        <div class="quiz-score" id="quizScore">快判得分：0 / 20（先做到 18 分以上再刷 115 题！）</div>
+        <div style="font-size:12.5px;color:var(--muted);">全部改编自毛中特 P65–81 最高频失分选项，判断这句话该“选”还是该“排”！</div>
+      </div>
+      <button class="pill primary" id="resetQuizBtn" type="button">🔄 重测一遍</button>
+    </div>
+    <div id="quizContainer"></div>
+  </section>
+</main>
+
+<script>
+(function() {
+  const STORE_MASTER = "ky_mzt_master_v1";
+  const STORE_THEME = "ky_mzt_guide_theme_v1";
+
+  const tabBtns = document.querySelectorAll(".tab-btn");
+  const panels = document.querySelectorAll(".panel");
+  tabBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = btn.dataset.tab;
+      tabBtns.forEach(b => b.classList.toggle("active", b === btn));
+      panels.forEach(p => p.classList.toggle("active", p.id === "panel-" + target));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  if (location.protocol === "file:") {
+    const link = document.getElementById("toDrillLink");
+    if (link) link.href = "./毛中特全115题_单选多选云同步刷题本(P65-81).html";
+  }
+
+  const themeBtn = document.getElementById("themeBtn");
+  function applyTheme(t) {
+    if (t === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      themeBtn.textContent = "☀️ 日间";
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      themeBtn.textContent = "🌙 夜间";
+    }
+  }
+  let theme = "light";
+  try { theme = localStorage.getItem(STORE_THEME) || "light"; } catch (e) {}
+  applyTheme(theme);
+  themeBtn.addEventListener("click", () => {
+    theme = theme === "dark" ? "light" : "dark";
+    try { localStorage.setItem(STORE_THEME, theme); } catch (e) {}
+    applyTheme(theme);
+  });
+
+  let mastered = {};
+  try { mastered = JSON.parse(localStorage.getItem(STORE_MASTER) || "{}") || {}; } catch (e) {}
+  const allCheckBtns = document.querySelectorAll(".check-btn");
+  const masterText = document.getElementById("masterText");
+  const masterFill = document.getElementById("masterFill");
+
+  function renderMaster() {
+    let count = 0;
+    allCheckBtns.forEach(btn => {
+      const id = btn.dataset.card;
+      const done = !!mastered[id];
+      if (done) count++;
+      btn.classList.toggle("done", done);
+      btn.textContent = done ? "✓ 已掌握" : "○ 标为已懂";
+      const card = document.querySelector('.card[data-card="' + id + '"]');
+      if (card) card.classList.toggle("mastered", done);
+    });
+    const total = allCheckBtns.length;
+    masterText.textContent = "通关进度：" + count + " / " + total + " 卡";
+    masterFill.style.width = Math.round((count / total) * 100) + "%";
+  }
+
+  allCheckBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.card;
+      mastered[id] = !mastered[id];
+      try { localStorage.setItem(STORE_MASTER, JSON.stringify(mastered)); } catch (e) {}
+      renderMaster();
+    });
+  });
+  renderMaster();
+
+  const QUIZ = [
+    { q: "1938年党的六届六中全会正式提出“马克思主义的中国化”这一命题。", ok: true, ref: "单1", why: "完全正确！1938 六届六中全会《论新阶段》首提命题；1945 七大才把毛泽东思想写入党章。" },
+    { q: "大革命时期毛泽东提出“工农武装割据”思想，标志着毛泽东思想开始萌芽。", ok: false, ref: "单3/多3", why: "时期串台！“工农武装割据”和农村包围城市是土地革命战争时期（初步形成）；萌芽标志是提出新民主主义革命基本思想。" },
+    { q: "“不唯上、不唯书、只唯实，交换、比较、反复”是毛泽东在确立实事求是思想路线时提出的。", ok: false, ref: "多4", why: "人物串台！这句话是陈云提出的；“一切从本本出发不能前进”是邓小平提出的。" },
+    { q: "独立自主是中华民族精神之魂，也是党的生命线和根本工作路线。", ok: false, ref: "单7/多5", why: "后半句张冠李戴！“党的生命线和根本工作路线”是群众路线，不是独立自主。" },
+    { q: "新民主主义革命时期，“二次革命论”属于右倾错误，实质是放弃无产阶级领导权。", ok: true, ref: "单15/16", why: "正确！“一次革命论/毕其功于一役”是“左”倾混淆界限；“二次革命论”是右倾割裂联系、放弃领导权。" },
+    { q: "新民主主义经济纲领中极具特色的内容是“保护民族工商业”，同时也包括“没收外国在华资本”。", ok: false, ref: "单21/多11", why: "后半句错！经济纲领只有三条：没收封建地主土地、没收官僚垄断资本、保护民族工商业（无“没收外国在华资本”）。" },
+    { q: "近代中国阶级结构“两头小中间大”，其中“中间”包含无产阶级、农民阶级和城市小资产阶级。", ok: false, ref: "多18", why: "必排死坑！无产阶级属于“两头小”中的一头（另一头是地主大资产阶级），中间是农民+城市小资+民资。" },
+    { q: "建立最广泛统一战线的“可能性”，是由半殖民地半封建中国社会交织在一起的诸多矛盾决定的。", ok: true, ref: "单26", why: "正确！诸多矛盾交织决定“可能性”；阶级状况与革命长期残酷决定“必要性”。" },
+    { q: "“支部建在连上”属于人民军队政治工作的基本原则之一。", ok: false, ref: "多21", why: "串台！“支部建在连上”属于“坚持党对军队绝对领导”；政治工作三原则是官兵一致、军民一致、瓦解敌军优待俘虏。" },
+    { q: "新民主主义社会是无产阶级建立政权过程中必然经历的一个独立的社会形态。", ok: false, ref: "多24", why: "错！新民主主义社会是属于社会主义体系的“过渡性”社会形态，不是独立社会形态。" },
+    { q: "土地改革基本完成后，国内主要矛盾转变为工人阶级和资产阶级的矛盾。", ok: true, ref: "单30/多26", why: "正确！1952 底土改完成后即转为工人 vs 资产阶级（社 vs 资两条道路）的矛盾。" },
+    { q: "手工业供销合作社和初级农业生产合作社，在性质上都属于半社会主义性质。", ok: true, ref: "单33/多30", why: "完全正确！互助组/供销小组=萌芽；初级农社/手工业供销社/个别公私合营=半社会主义；高级社/手工业生产社/全行业合营=完全社会主义。" },
+    { q: "对资本主义工商业改造中，个别企业公私合营实行“四马分肥”，全行业公私合营实行“定股定息”。", ok: true, ref: "单34/35", why: "完全精准！初级国家资本（外部合作）和个别公私合营（内部合作）都是四马分肥，全行业才定股定息。" },
+    { q: "“自愿互利、典型示范和国家帮助”既是农业改造原则，也是资本主义工商业改造的原则。", ok: false, ref: "单32/多29", why: "张冠李戴！那是农业社会主义改造的原则，不用于资本主义工商业。" },
+    { q: "1956年底社会主义基本制度确立，标志着马克思主义同中国实际的“第二次结合”顺利实现。", ok: false, ref: "多38", why: "进程节点错位！1956 年“第二次结合”只是刚刚开始，远未实现。" },
+    { q: "1956年《论十大关系》提出“向外国学习”口号，并提出探索在中国实行改革开放的道路。", ok: false, ref: "多40", why: "后半句超前！《论十大关系》提了“向外国学习”，但并未提出“实行改革开放”。" },
+    { q: "在政治思想领域，毛泽东提出解决人民内部矛盾的具体方针是“团结—批评—团结”。", ok: true, ref: "单43", why: "正确！别和延安整风的“惩前毖后、治病救人”及抗战对顽固派的“有理、有利、有节”混！" },
+    { q: "“三个有利于”标准包含：有利于发展生产力、增强综合国力、提高人民生活水平、完善生产关系。", ok: false, ref: "多51", why: "凑数陷阱！“三个有利于”只有前三项，不含“完善社会主义生产关系”。" },
+    { q: "市场经济本身不具有制度属性，因此它同不同社会制度结合所表现出的性质也是相同的。", ok: false, ref: "单51/多52", why: "后半句必排！本身无制度属性（对），但结合不同社会制度后表现出的性质是不同的！" },
+    { q: "科学发展观的基本要求是全面协调可持续，处理改革、发展、稳定关系的重要结合点是不断改善人民生活。", ok: true, ref: "单54/55", why: "全对！要义=发展，核心=以人为本，基本要求=全面协调可持续，根本方法=统筹兼顾。" }
+  ];
+
+  const quizContainer = document.getElementById("quizContainer");
+  const quizScore = document.getElementById("quizScore");
+  let quizAnswers = {};
+
+  function renderQuiz() {
+    quizContainer.innerHTML = "";
+    QUIZ.forEach((item, idx) => {
+      const card = document.createElement("div");
+      card.className = "quiz-card";
+      card.innerHTML =
+        '<p class="quiz-q"><span class="quiz-num">第 ' + (idx + 1) + ' 判 · ' + item.ref + '</span>' + item.q + '</p>' +
+        '<div class="quiz-btns">' +
+          '<button type="button" class="q-choice" data-idx="' + idx + '" data-val="true">✅ 正确（应选）</button>' +
+          '<button type="button" class="q-choice" data-idx="' + idx + '" data-val="false">❌ 陷阱（排除）</button>' +
+        '</div>' +
+        '<div class="quiz-fb" id="qfb-' + idx + '"></div>';
+      quizContainer.appendChild(card);
+    });
+
+    quizContainer.querySelectorAll(".q-choice").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const idx = Number(btn.dataset.idx);
+        const val = btn.dataset.val === "true";
+        const item = QUIZ[idx];
+        const isRight = (val === item.ok);
+        quizAnswers[idx] = isRight;
+
+        const pair = quizContainer.querySelectorAll('.q-choice[data-idx="' + idx + '"]');
+        pair.forEach(b => { b.classList.remove("picked-ok", "picked-err"); });
+        btn.classList.add(isRight ? "picked-ok" : "picked-err");
+
+        const fb = document.getElementById("qfb-" + idx);
+        fb.className = "quiz-fb show " + (isRight ? "ok" : "err");
+        fb.innerHTML = (isRight ? "<strong>🎯 判对了！</strong>" : "<strong>💥 踩坑啦！</strong>") + item.why;
+        updateQuizScore();
+      });
+    });
+    updateQuizScore();
+  }
+
+  function updateQuizScore() {
+    const answered = Object.keys(quizAnswers).length;
+    const correct = Object.values(quizAnswers).filter(Boolean).length;
+    const tip = answered === QUIZ.length
+      ? (correct >= 18 ? " 🎉 通关！快去秒杀毛中特全 115 题！" : " 💪 再扫一遍错判点，稳上 18 分！")
+      : "（目标 18 分以上再去刷题）";
+    quizScore.textContent = "快判得分：" + correct + " / " + QUIZ.length + "（已判 " + answered + " 题）" + tip;
+  }
+
+  document.getElementById("resetQuizBtn").addEventListener("click", () => {
+    quizAnswers = {};
+    renderQuiz();
+  });
+
+  renderQuiz();
+})();
+</script>
+</body>
+</html>

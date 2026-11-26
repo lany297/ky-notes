@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0f766e">
+<title>马原第四、五章 · 政经纯应试考点通关手册（对应第 114–190 题）</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2328;
+    --muted: #59636e;
+    --border: #e5e8ec;
+    --accent: #0f766e;
+    --accent-soft: #ecfdf5;
+    --accent-border: #a7f3d0;
+    --blue: #0369a1;
+    --blue-soft: #f0f9ff;
+    --blue-border: #bae6fd;
+    --ok: #15803d;
+    --ok-bg: #dcfce7;
+    --ok-border: #86efac;
+    --err: #b91c1c;
+    --err-bg: #fef2f2;
+    --err-border: #fecaca;
+    --warn: #b45309;
+    --warn-bg: #fffbeb;
+    --warn-border: #fde68a;
+    --shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  }
+  [data-theme="dark"] {
+    --bg: #111418;
+    --card: #1a1f26;
+    --text: #e6edf3;
+    --muted: #9aa4b2;
+    --border: #2c3440;
+    --accent: #34d399;
+    --accent-soft: #102620;
+    --accent-border: #1e4d3f;
+    --blue: #38bdf8;
+    --blue-soft: #122436;
+    --blue-border: #1e3f5e;
+    --ok: #4ade80;
+    --ok-bg: #122e1d;
+    --ok-border: #1f5c35;
+    --err: #f87171;
+    --err-bg: #36181a;
+    --err-border: #6b262a;
+    --warn: #fbbf24;
+    --warn-bg: #2e220f;
+    --warn-border: #5c4319;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 15.5px;
+    line-height: 1.68;
+    padding-bottom: 84px;
+  }
+
+  /* Top sticky bar */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: color-mix(in srgb, var(--card) 94%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 12px;
+  }
+  .topbar-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .brand {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--accent);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .top-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .pill {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+  }
+  .pill:active { transform: scale(0.96); }
+  .pill.primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* Main Tabs */
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+  .tab-btn {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    padding: 7px 6px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s ease;
+  }
+  .tab-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  @media (max-width: 520px) {
+    .tab-btn { font-size: 12px; padding: 6px 4px; }
+  }
+
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 14px 12px 0;
+  }
+
+  /* Compact Hero Banner */
+  .hero {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+  }
+  .hero h1 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    line-height: 1.35;
+  }
+  .hero-sub {
+    margin: 0 0 10px;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  .progress-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .progress-track {
+    flex: 1;
+    height: 8px;
+    background: var(--bg);
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transition: width 0.25s ease;
+  }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* Jump chip row inside chapters */
+  .jump-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .jump-chip {
+    font-size: 12px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .jump-chip:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Concept Card */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 15px 16px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 112px;
+  }
+  .card.mastered {
+    border-color: var(--accent-border);
+  }
+  .card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .card-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .card-title {
+    margin: 0;
+    font-size: 16.5px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .q-ref {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .q-tag {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    padding: 1px 7px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--accent);
+  }
+  .check-btn {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .check-btn.done {
+    background: var(--ok-bg);
+    border-color: var(--ok-border);
+    color: var(--ok);
+    font-weight: 600;
+  }
+
+  /* Plain-language translation & formula boxes */
+  .tldr {
+    background: var(--blue-soft);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 10px 10px 0;
+    padding: 9px 12px;
+    margin: 8px 0 10px;
+    font-size: 14.5px;
+  }
+  .formula {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 9px 12px;
+    margin: 8px 0 10px;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .trap-box {
+    background: var(--err-bg);
+    border: 1px solid var(--err-border);
+    border-radius: 10px;
+    padding: 9px 12px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .trap-box strong.label { color: var(--err); }
+  .ok-box {
+    background: var(--ok-bg);
+    border: 1px solid var(--ok-border);
+    border-radius: 10px;
+    padding: 9px 12px;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .ok-box strong.label { color: var(--ok); }
+  .warn-box {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 10px;
+    padding: 9px 12px;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .warn-box strong.label { color: var(--warn); }
+
+  /* Comparison tables */
+  .tbl-wrap {
+    overflow-x: auto;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 440px;
+  }
+  th, td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+  th:last-child, td:last-child { border-right: none; }
+  tr:last-child td { border-bottom: none; }
+  th {
+    background: var(--bg);
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  /* 2-col split grid */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 8px 0;
+  }
+  @media (max-width: 600px) {
+    .split { grid-template-columns: 1fr; }
+  }
+  .sub-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .sub-card h4 {
+    margin: 0 0 6px;
+    font-size: 14.5px;
+    color: var(--accent);
+  }
+  .sub-card ul, .clean-ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+  }
+  .sub-card li, .clean-ul li { margin-bottom: 4px; }
+
+  /* Flow chain */
+  .chain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin: 8px 0;
+  }
+  .node {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+  .arrow { color: var(--accent); font-weight: 700; }
+
+  /* Visual diagram for c/v vs fixed/circulating */
+  .cap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    margin: 8px 0;
+    text-align: center;
+    font-size: 13.5px;
+  }
+  .cap-cell {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 6px;
+    background: var(--bg);
+  }
+  .cap-cell.middle {
+    background: var(--warn-bg);
+    border-color: var(--warn-border);
+  }
+  .cap-bar-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 6px;
+    margin-top: 6px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .cap-bar-row.alt {
+    grid-template-columns: 1fr 2fr;
+  }
+  .bar-c { background: var(--blue-soft); border: 1px solid var(--blue-border); color: var(--blue); border-radius: 8px; padding: 5px; }
+  .bar-v { background: var(--ok-bg); border: 1px solid var(--ok-border); color: var(--ok); border-radius: 8px; padding: 5px; }
+  .bar-fix { background: var(--bg); border: 1px solid var(--border); color: var(--muted); border-radius: 8px; padding: 5px; }
+  .bar-flow { background: var(--warn-bg); border: 1px solid var(--warn-border); color: var(--warn); border-radius: 8px; padding: 5px; }
+
+  /* Red-black kill list */
+  .kill-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--err-bg);
+    border: 1px solid var(--err-border);
+    margin-bottom: 9px;
+    font-size: 14.5px;
+  }
+  .kill-badge {
+    background: var(--err);
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .kill-fix {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 3px;
+  }
+
+  /* Quiz styles */
+  .quiz-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  .quiz-score {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--accent);
+  }
+  .quiz-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 15px;
+    margin-bottom: 11px;
+    box-shadow: var(--shadow);
+  }
+  .quiz-q {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+  .quiz-num {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--accent-border);
+    border-radius: 6px;
+    padding: 0 6px;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .quiz-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .q-choice {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    padding: 9px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .q-choice:hover { border-color: var(--accent); }
+  .q-choice.picked-ok {
+    background: var(--ok-bg);
+    border-color: var(--ok-border);
+    color: var(--ok);
+  }
+  .q-choice.picked-err {
+    background: var(--err-bg);
+    border-color: var(--err-border);
+    color: var(--err);
+  }
+  .quiz-fb {
+    margin-top: 9px;
+    padding: 8px 11px;
+    border-radius: 9px;
+    font-size: 13.5px;
+    display: none;
+  }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.ok { background: var(--ok-bg); border: 1px solid var(--ok-border); }
+  .quiz-fb.err { background: var(--err-bg); border: 1px solid var(--err-border); }
+
+  code {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1px 5px;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 13.5px;
+  }
+  .hl { color: var(--err); font-weight: 700; }
+  .hl-ok { color: var(--ok); font-weight: 700; }
+  .hl-acc { color: var(--accent); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="top-row">
+      <div class="brand">🎯 政经纯应试通关 · 马原第四、五章</div>
+      <div class="top-actions">
+        <a class="pill" href="./index.html" id="backDrillLink">📝 回刷题本</a>
+        <button class="pill" id="themeBtn" type="button">🌙 夜间</button>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="ch4" type="button">第四章 (10卡)</button>
+      <button class="tab-btn" data-tab="ch5" type="button">第五章 (7卡)</button>
+      <button class="tab-btn" data-tab="traps" type="button">红黑避坑榜</button>
+      <button class="tab-btn" data-tab="quiz" type="button">⚡ 20题快判</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>先捋清这 17 张硬核考点卡，再回去秒杀第 114–190 题</h1>
+    <p class="hero-sub">零废话、零长篇理论。每一张卡都直接对应肖 1000 题第四、五章（共 77 道多选）的真实扣分陷阱。看懂一张就点右上角“已懂”，最后用 <strong>⚡ 20 题快判</strong> 验收再回题库！</p>
+    <div class="progress-bar-wrap">
+      <span id="masterText">通关进度：0 / 17 卡</span>
+      <div class="progress-track"><div class="progress-fill" id="masterFill"></div></div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 1: CHAPTER 4 ==================== -->
+  <section class="panel active" id="panel-ch4">
+    <div class="jump-row">
+      <a class="jump-chip" href="#c4-1">1.商品三兄弟</a>
+      <a class="jump-chip" href="#c4-2">2.劳动二重性</a>
+      <a class="jump-chip" href="#c4-3">3.生产率秒算</a>
+      <a class="jump-chip" href="#c4-4">4.货币与价值规律</a>
+      <a class="jump-chip" href="#c4-5">5.劳动力商品</a>
+      <a class="jump-chip" href="#c4-6">6.不变/可变vs固定/流动</a>
+      <a class="jump-chip" href="#c4-7">7.三种剩余价值</a>
+      <a class="jump-chip" href="#c4-8">8.资本积累与构成</a>
+      <a class="jump-chip" href="#c4-9">9.周转/再生产/平均利润</a>
+      <a class="jump-chip" href="#c4-10">10.政治与意识形态</a>
+    </div>
+
+    <!-- Card 4-1 -->
+    <article class="card" id="c4-1" data-card="c4-1">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 1｜商品二因素 + “价值三兄弟”定位</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 114–116 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c4-1" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tldr">
+        <strong>一句话定位：</strong>商品 = <strong>劳动产品 + 用来交换</strong>（自产自用不是商品），它是<strong>历史范畴</strong>（原始社会早期没有，共产主义也会消亡，不是伴随始终）。
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>概念</th><th>人话转译</th><th>必考标准定位</th></tr></thead>
+          <tbody>
+            <tr><td><strong>使用价值</strong></td><td>东西本身有什么用（物质外壳）</td><td>价值和交换价值的<strong>物质承担者</strong>；反映人与自然关系</td></tr>
+            <tr><td><strong>价值</strong></td><td>凝结的无差别一般人类劳动（看不见的内核）</td><td>交换价值的<strong>基础</strong>；实体是<strong>抽象劳动</strong>；反映人与人的社会关系</td></tr>
+            <tr><td><strong>交换价值</strong></td><td>1 把斧子换 20 斤米这个交换比例</td><td>价值的<strong>表现形式</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 必排死坑：</strong><br>
+        1. 说“<span class="hl">使用价值寓于价值之中</span>” → <strong>说反了！</strong>是<strong>价值寓于使用价值之中</strong>（东西先有用，价值才有载体）。<br>
+        2. 说“<span class="hl">劳动是一切社会财富的唯一源泉</span>” → <strong>错！</strong><strong>价值</strong>的唯一源泉才是劳动；<strong>社会财富（使用价值）</strong>靠“劳动 + 自然资源”共同创造。<br>
+        3. 说“<span class="hl">商品是价值和交换价值的矛盾统一体</span>” → <strong>错！</strong>是<strong>使用价值</strong>和<strong>价值</strong>的矛盾统一体。
+      </div>
+    </article>
+
+    <!-- Card 4-2 -->
+    <article class="card" id="c4-2" data-card="c4-2">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 2｜劳动二重性分工 + 商品经济基本矛盾</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 117、126、127、134、154 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c4-2" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tldr">
+        <strong>为什么容易混？</strong>同一个工人干活，站在两个角度看就叫“劳动二重性”——按工种看叫<strong>具体劳动</strong>，按耗费的体脑力看叫<strong>抽象劳动</strong>。两者分工死死分开，绝不串门！
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>维度</th><th>具体劳动（木匠锯木、裁缝缝衣）</th><th>抽象劳动（纯算花了多少体脑力）</th></tr></thead>
+          <tbody>
+            <tr><td>干什么用？</td><td>① 造出<strong>使用价值</strong><br>② <strong>转移</strong>生产资料（不变资本 c）的旧价值</td><td><strong>新创造</strong>出新价值 = <br><strong>再生产劳动力价值（v）+ 剩余价值（m）</strong></td></tr>
+            <tr><td>反映什么关系？</td><td>人与<strong>自然</strong>的关系（自然属性）</td><td>商品生产者的<strong>社会关系</strong>（社会属性）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ok-box">
+        <strong class="label">✅ 三个固定称号 & 基础矛盾死背：</strong><br>
+        • <strong>劳动二重性</strong> = <strong>马克思首创</strong> + <strong>“理解政治经济学的枢纽”</strong>（注意：“劳动创造价值”是亚当·斯密先提出的，不是马克思首次提出！）。<br>
+        • <strong>剩余价值理论</strong> = 马克思主义经济理论的<strong>基石</strong>（不是“枢纽”）。<br>
+        • <strong>私人劳动和社会劳动的矛盾</strong> = 私有制商品经济的<strong>基本矛盾</strong> + <strong>其他一切矛盾的基础</strong> + 决定生产者命运（东西卖不出去，私人劳动变不成社会劳动就破产）。
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 必排死坑：</strong>只要看见“<span class="hl">抽象劳动转移可变资本的价值</span>”或“<span class="hl">具体劳动转移劳动力自身价值</span>”，一律秒杀排除！<strong>只有生产资料（不变资本）的价值是“转移”的；劳动力（可变资本）的价值永远是“新创造 / 再生产”出来的！</strong>
+      </div>
+    </article>
+
+    <!-- Card 4-3 -->
+    <article class="card" id="c4-3" data-card="c4-3">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 3｜劳动生产率 vs 价值量（10 秒数字秒杀法）</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 118–120 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c4-3" type="button">○ 标为已懂</button>
+      </div>
+      <div class="formula">
+        政经黄金铁律：同一时间内，不管部门劳动生产率怎么变 → <span class="hl-acc">创造的价值总量永远不变！</span>
+      </div>
+      <div class="tldr">
+        <strong>套一个具体数字，所有题秒算：</strong><br>
+        原来 1 小时造 <strong>10 件</strong>衣服，1 小时总价值 <strong>100 元</strong> → 单件价值 = <strong>10 元</strong>。<br>
+        现在全行业效率翻倍，1 小时造 <strong>20 件</strong>衣服（<strong>商品件数 / 使用价值量 ↑</strong>），但 1 小时总价值<strong>仍是 100 元（总价值不变）</strong> → 单件价值 = 100 ÷ 20 = <strong>5 元（单位商品价值量 ↓）</strong>！
+      </div>
+      <div class="split">
+        <div class="sub-card">
+          <h4>怎么测量劳动生产率？（只有 2 种）</h4>
+          <ul>
+            <li>✅ 单位时间内生产的<strong>商品数量</strong>（1 小时造几件）</li>
+            <li>✅ 单位商品所耗费的<strong>劳动时间</strong>（造 1 件花几分钟）</li>
+            <li>❌ 单位时间耗费的劳动量 / 价值总量（永远不变，测不出！）</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h4>影响劳动生产率的 4 大因素（全选）</h4>
+          <ul>
+            <li>劳动者的平均<strong>熟练程度</strong></li>
+            <li><strong>科学技术</strong>发展及应用程度</li>
+            <li>生产过程的<strong>社会结合</strong>（分工协作）</li>
+            <li><strong>生产资料</strong>规模效能 + <strong>自然条件</strong></li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 4-4 -->
+    <article class="card" id="c4-4" data-card="c4-4">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 4｜货币三大易混职能 + 价值规律</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 121–125 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c4-4" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>货币职能</th><th>3 秒判断口诀</th><th>真题实例</th></tr></thead>
+          <tbody>
+            <tr><td><strong>价值尺度</strong></td><td>只标个价 / 写进合同，<strong>不掏真钱</strong></td><td>合同约定房价 30 万元</td></tr>
+            <tr><td><strong>流通手段</strong></td><td><strong>一手交钱、一手交货</strong>（当场银货两讫）</td><td>在市场现购材料 5 万元</td></tr>
+            <tr><td><strong>支付手段</strong></td><td><strong>钱货不同步</strong>（分期/赊账/还债）或<strong>单向给钱</strong>（交税/工资/房租）</td><td>第二年付房款 10 万；缴契税 9000 元</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ok-box">
+        <strong class="label">✅ 价值规律必考 4 点：</strong><br>
+        1. 是<strong>商品经济共有规律</strong>（社会主义市场经济也有，<strong>不是资本主义特有</strong>）。<br>
+        2. 表现形式分三阶段变化：自由竞争围绕<strong>价值</strong>波动 → 平均利润后围绕<strong>生产价格</strong>波动 → 垄断阶段围绕<strong>垄断价格</strong>波动。<br>
+        3. 自由竞争长期看：价格高于价值与低于价值<strong>可以相抵</strong>，长期平均价格 = 价值（但<strong>垄断高价溢价 ≠ 垄断低价折价</strong>！）。<br>
+        4. 三大作用：调资源配置比例 + 促生产力发展 + 调<strong>社会收入分配</strong>（不是调“工人与资本家利益再分配”）。
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 必排死坑：</strong>简单商品生产进入资本主义商品生产的标志是<strong>劳动力成为商品</strong>，<strong>不是货币的出现</strong>（奴隶封建社会早就有货币了）。
+      </div>
+    </article>
+
+    <!-- Card 4-5 -->
+    <article class="card" id="c4-5" data-card="c4-5">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 5｜产生途径 vs 原始积累 + 劳动力商品</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 128–131、133 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c4-5" type="button">○ 标为已懂</button>
+      </div>
+      <div class="split">
+        <div class="sub-card">
+          <h4>资本主义产生的 2 条途径（128题）</h4>
+          <ul>
+            <li>从<strong>小商品经济</strong>中分化出来</li>
+            <li>从<strong>商人和高利贷者</strong>转化而来</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h4>资本原始积累的 2 种手段（别串台！）</h4>
+          <ul>
+            <li>暴力剥夺农民的<strong>土地</strong>（圈地）</li>
+            <li>暴力掠夺<strong>货币财富</strong>（殖民）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>考点</th><th>正确结论（人话版）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>劳动力 vs 普通商品<br>（共同点 vs 独特点）</strong></td><td><strong>共同点：</strong>都有使用价值和价值；都属于历史范畴；市场价格都受供求影响。<br><strong>劳动力独有：</strong>价值靠劳动<strong>再生产</strong>出来（不是转移）；使用价值是价值的源泉、能<strong>价值增殖</strong>。</td></tr>
+            <tr><td><strong>劳动力价值的 3 构成</strong></td><td>① 养工人<strong>自己</strong>的生活资料 + ② 养<strong>家属</strong>（下一代工人）+ ③ <strong>教育培训费</strong>（不含资本家消费）；包含<strong>历史和道德因素</strong>。</td></tr>
+            <tr><td><strong>资本主义劳动过程 2 特点</strong></td><td>① 干活听老板管（劳动隶属资本家）+ ② 产品全归老板所有。<br>❌ 工资 = 劳动力价值（不是远小于）；❌ 工人有人身自由（无“人身依附”）。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- Card 4-6 -->
+    <article class="card" id="c4-6" data-card="c4-6">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 6｜全章最痛点：不变/可变 vs 固定/流动（一图秒懂）</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 132、135–137 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c4-6" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tldr">
+        <strong>为什么 90% 的人这里疯狂做错？</strong>因为老板买东西就 3 样：<strong>厂房机器、原料燃料、工人工资</strong>。马克思按两种不同标准切了两刀，<strong>中间的“原料燃料”两头跨界</strong>！看下面这张图，一辈子不会再混：
+      </div>
+      <div class="cap-grid">
+        <div class="cap-cell"><strong>① 厂房、机器</strong><br><small>分批磨损折旧</small></div>
+        <div class="cap-cell middle"><strong>② 原料、燃料</strong><br><small>一次性用完（跨界！）</small></div>
+        <div class="cap-cell"><strong>③ 工人工资</strong><br><small>买劳动力</small></div>
+      </div>
+      <div class="cap-bar-row">
+        <div class="bar-c">← 不变资本 c（生产资料：只转移旧价值，不增殖） →</div>
+        <div class="bar-v">可变资本 v（唯一生 m）</div>
+      </div>
+      <div class="cap-bar-row alt">
+        <div class="bar-fix">固定资本（分批收回）</div>
+        <div class="bar-flow">← 流动资本（一次性收回：原料 + 工资） →</div>
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 看完上图，这 4 个死坑直接秒排：</strong><br>
+        1. “<span class="hl">不变资本就是固定资本</span>” → <strong>错！</strong>不变资本还包着中间的<strong>原料燃料</strong>（属于流动资本）。<br>
+        2. “<span class="hl">流动资本全是价值的源泉</span>” → <strong>错！</strong>流动资本里混着<strong>原料燃料</strong>（不变资本，不生新价值）。<br>
+        3. “<span class="hl">不变资本不转变物质形态 / 不是一次性转移</span>” → <strong>错！</strong>棉花织布形态变了，原料也是一次性转移！“不变”<strong>只指价值量不变、不发生增殖</strong>。<br>
+        4. “<span class="hl">资本是剩余价值的源泉</span>” → <strong>错！</strong>资本只能“带来”剩余价值，<strong>唯一源泉永远是雇佣工人的剩余劳动（可变资本 v）</strong>。
+      </div>
+    </article>
+
+    <!-- Card 4-7 -->
+    <article class="card" id="c4-7" data-card="c4-7">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 7｜绝对 / 相对 / 超额剩余价值 + 生产自动化</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 138–141 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c4-7" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>类型</th><th>怎么榨？</th><th>针对谁？</th></tr></thead>
+          <tbody>
+            <tr><td><strong>绝对剩余价值</strong></td><td>硬榨：<strong>延长工作日</strong> 或 <strong>提高劳动强度</strong>（加班/加速流水线）</td><td>单个/全体资本家</td></tr>
+            <tr><td><strong>超额剩余价值</strong></td><td><strong>个别企业</strong>率先提效 → 个别价值 &lt; 社会价值，仍按<strong>社会价值卖</strong>（遵守价值规律）赚差价</td><td>领先的<strong>单个企业</strong>（暂时的）</td></tr>
+            <tr><td><strong>相对剩余价值</strong></td><td>工作日不变，<strong>全社会</strong>提效 → 生活品变便宜 → <strong>劳动力价值↓ → 必要劳动时间↓ → 剩余劳动时间↑</strong></td><td><strong>整个资本家阶级</strong>普遍获得</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="chain">
+        <span class="node">单个老板追超额</span><span class="arrow">→</span>
+        <span class="node">同行模仿全社会提效</span><span class="arrow">→</span>
+        <span class="node">生活品便宜/劳动力价值↓</span><span class="arrow">→</span>
+        <span class="node">必要时间↓ 剩余时间↑</span><span class="arrow">→</span>
+        <span class="node">全阶级得相对剩余价值</span>
+      </div>
+      <div class="warn-box">
+        <strong class="label">⚡ 生产自动化（无人工厂）3 条铁律（141 题）：</strong><br>
+        ① 自动化机器仍是更先进的生产工具（不变资本），<strong>绝不是独立剩余价值源泉</strong>（唯一源泉仍是工人剩余劳动）。<br>
+        ② 机器换人导致 <code>c</code> 暴涨、<code>v</code> 占比下降 → 资本有机构成 <code>c:v</code> 是<strong>提高</strong>（不是降低！）。<br>
+        ③ 背后研发/编程/维护人员的<strong>劳动复杂程度和强度日益提高</strong>。
+      </div>
+    </article>
+
+    <!-- Card 4-8 -->
+    <article class="card" id="c4-8" data-card="c4-8">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 8｜资本积累 + “三大构成”精准切分 + 失业</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 142–146 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c4-8" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tldr">
+        <strong>资本积累</strong> = 把榨来的剩余价值重新投回工厂滚雪球（剩余价值的资本化）。<br>
+        三大定位：<strong>扩大再生产的源泉 + 两极分化的重要原因 + 资本主义失业（相对过剩人口）的根源</strong>。
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>三个“构成”极易混</th><th>一句话秒分</th></tr></thead>
+          <tbody>
+            <tr><td><strong>资本技术构成</strong></td><td>纯<strong>实物数量</strong>比例（由技术水平决定：1 个工人管几台机器）</td></tr>
+            <tr><td><strong>资本价值构成</strong></td><td>纯<strong>钱</strong>的比例（不变资本 <code>c</code> : 可变资本 <code>v</code>）</td></tr>
+            <tr><td><strong>资本有机构成</strong></td><td><strong>由技术构成决定并反映技术构成变化的价值构成</strong>（关键词：既含技术决定，又落脚在价值构成！）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ok-box">
+        <strong class="label">✅ 决定资本积累规模的 4 因素（全正相关，144 题全选）：</strong><br>
+        ① 剥削程度 + ② 劳动生产率 + ③ <strong>所用资本和所费资本的差额</strong>（用词转译：机器总价 100 万 − 当年折旧 10 万 = 90 万，差额越大说明能白用越多年）+ ④ 预付资本大小。
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 4 个必排串台坑：</strong><br>
+        1. 经济危机根本原因 = <strong>资本主义基本矛盾</strong>（不是资本积累！）。<br>
+        2. 揭露批判“<strong>商品拜物教</strong>”归属<strong>劳动价值论</strong>（不归资本积累学说！）。<br>
+        3. 反映剥削程度的根本标准 = <strong>剩余价值率 <code>m/v</code></strong>（不是资本有机构成 <code>c:v</code>！）。<br>
+        4. 资产阶级政府干预<strong>绝不可能“彻底消灭失业”</strong>。
+      </div>
+    </article>
+
+    <!-- Card 4-9 -->
+    <article class="card" id="c4-9" data-card="c4-9">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 9｜循环周转 + 社会再生产 + 工资/利润/平均利润</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 147–153 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c4-9" type="button">○ 标为已懂</button>
+      </div>
+      <div class="split">
+        <div class="sub-card">
+          <h4>循环 &amp; 周转（防与 144 题串台！）</h4>
+          <ul>
+            <li><strong>产业资本连续循环 2 前提：</strong>三种职能形式（货币/生产/商品）<strong>空间上并存 + 时间上继起</strong>。</li>
+            <li><strong>影响资本周转快慢的 2 关键因素：</strong>① <strong>周转时间</strong>；② <strong>固定资本与流动资本的构成</strong>（千万别把 144 题的“所用所费差额、预付资本大小”混进来！）。</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h4>社会再生产顺利进行的 4 要求（149 全选）</h4>
+          <ul>
+            <li>社会总产品实现两大核心：<strong>价值补偿</strong>（卖出去换钱）+ <strong>实物替换</strong>（买回新机器原料和消费品）。</li>
+            <li>比例要求：两大部类<strong>之间</strong>成比例 + 部类<strong>内部各部门之间</strong>成比例。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="formula">
+        公式铁律：利润率 <code>p' = m / (c+v)</code> <span class="hl">永远 &lt;</span> 剩余价值率 <code>m' = m / v</code>（分母更大！）
+      </div>
+      <div class="ok-box">
+        <strong class="label">✅ 剥削的 4 层“遮羞布” &amp; 平均利润规律（150–153 题）：</strong><br>
+        • <strong>4 层遮羞布（全选）：</strong>工资表现为“劳动的价格” / 剩余价值转化为利润 / 利润转化为平均利润 / 形式上的自由平等。<br>
+        • <strong>工资：</strong>本质是<strong>劳动力价值/价格</strong>；当代资本主义国家工人实际工资呈<strong>上升</strong>趋势（不是不断降低）。<br>
+        • <strong>阶段先后：</strong>先 剩余价值 → <strong>利润</strong>；部门间竞争形成 <strong>平均利润</strong> 后，商品价值才转化为 <strong>生产价格（成本 + 平均利润）</strong>。<br>
+        • <strong>总账 vs 单部门：</strong>平均利润形成后，<strong>全社会总利润 = 总剩余价值</strong>，但<strong>单个部门利润 ≠ 该部门剩余价值</strong>；生产价格仍随商品价值变动而变动。
+      </div>
+    </article>
+
+    <!-- Card 4-10 -->
+    <article class="card" id="c4-10" data-card="c4-10">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 10｜资本主义政治制度与意识形态</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 155–157 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c4-10" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>资本主义宪法 4 大基本原则（全选）：</strong>私有制原则 + 主权在民原则 + 分权制衡原则 + 人权原则。</li>
+        <li><strong>民主本质：</strong>金钱操纵的民主、有钱人的游戏、法律名义平等掩盖事实不平等。</li>
+        <li><strong>意识形态：</strong>具有鲜明<strong>阶级性</strong>，是资产阶级阶级意识集中体现，为资本主义经济基础服务（<strong>绝不是</strong>“全体社会成员共同意识”或“没有阶级性”）。</li>
+      </ul>
+      <div class="trap-box">
+        <strong class="label">❌ 必排死坑：</strong>说资本主义政治制度“<span class="hl">始终阻碍</span>社会进步和生产力发展” → <strong>错！</strong>它在推翻封建制度时期起过巨大历史进步作用，看见“始终阻碍”直接划掉！
+      </div>
+    </article>
+  </section>
+
+  <!-- ==================== TAB 2: CHAPTER 5 ==================== -->
+  <section class="panel" id="panel-ch5">
+    <div class="jump-row">
+      <a class="jump-chip" href="#c5-1">1.垄断与竞争</a>
+      <a class="jump-chip" href="#c5-2">2.金融资本与垄断价格</a>
+      <a class="jump-chip" href="#c5-3">3.国家垄断防串台</a>
+      <a class="jump-chip" href="#c5-4">4.资本输出与全球化</a>
+      <a class="jump-chip" href="#c5-5">5.二战后新变化</a>
+      <a class="jump-chip" href="#c5-6">6.21世纪与三失矛盾</a>
+      <a class="jump-chip" href="#c5-7">7.历史趋势</a>
+    </div>
+
+    <!-- Card 5-1 -->
+    <article class="card" id="c5-1" data-card="c5-1">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 1｜垄断的产生 + 垄断与竞争（4 大必考坑）</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 158–161 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c5-1" type="button">○ 标为已懂</button>
+      </div>
+      <div class="chain">
+        <span class="node">追求剩余价值</span><span class="arrow">→</span>
+        <span class="node">自由竞争</span><span class="arrow">→</span>
+        <span class="node">生产集中 + 资本集中</span><span class="arrow">→</span>
+        <span class="node">必然引起垄断</span>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>对比维度</th><th>自由竞争（旧）</th><th>垄断条件下的竞争（新）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>目的（160 必考！）</strong></td><td>获得更多利润 / <strong>超额利润</strong>，扩大资本积累</td><td>获取<strong>高额垄断利润</strong> + 巩固扩大<strong>垄断统治地位</strong></td></tr>
+            <tr><td><strong>手段 / 范围 / 领域</strong></td><td>经济手段、国内市场、经济领域</td><td>加上<strong>非经济手段</strong>、扩到<strong>国际市场</strong>、扩到<strong>经济以外领域</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 3 个字眼陷阱直接秒排：</strong><br>
+        1. “<span class="hl">生产集中和资本集中是最简单初级的垄断组织形式</span>” → <strong>错！</strong>它们是产生垄断的<strong>原因</strong>；最简单初级的垄断组织形式 = <strong>短期价格协定</strong>。<br>
+        2. “<span class="hl">垄断并不是作为自由竞争的对立面产生的</span>” → <strong>错！</strong>垄断<strong>就是</strong>作为自由竞争的对立面产生的。<br>
+        3. 垄断<strong>不能消除竞争</strong>（内部、之间、同非垄断、集团之间全都在激烈竞争），原因：私有制商品经济条件还在 + 垄断须靠竞争维持 + 谁也包圆不了全社会生产。
+      </div>
+    </article>
+
+    <!-- Card 5-2 -->
+    <article class="card" id="c5-2" data-card="c5-2">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 2｜金融资本 + 垄断利润 + 垄断价格死坑</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 122、162–165 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c5-2" type="button">○ 标为已懂</button>
+      </div>
+      <div class="split">
+        <div class="sub-card">
+          <h4>金融资本形成 3 途径（162 题）</h4>
+          <ul>
+            <li>✅ <strong>金融联系</strong>（固定借贷）</li>
+            <li>✅ <strong>资本参与</strong>（互相持股）</li>
+            <li>✅ <strong>人事参与</strong>（互派董事高管）</li>
+            <li>❌ <strong>无“行政干预”</strong>（那是政府的事）</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h4>垄断利润 4 路来源（163 全选）</h4>
+          <ul>
+            <li>剥削<strong>本国</strong>无产阶级和劳动人民</li>
+            <li>挤占<strong>非垄断企业</strong>的利润</li>
+            <li>剥削掠夺<strong>外国</strong>劳动人民</li>
+            <li>通过<strong>国家政权</strong>再分配</li>
+          </ul>
+        </div>
+      </div>
+      <div class="formula">
+        垄断价格公式 = 成本价格 + 平均利润 + 垄断利润（没有否定价值规律！）
+      </div>
+      <div class="ok-box">
+        <strong class="label">✅ 为什么没否定价值规律？（全社会总账 3 条全对）：</strong><br>
+        ① 社会商品价值<strong>仍由社会必要劳动时间决定</strong>；② 垄断价格<strong>不增加也不减少社会价值总量</strong>（只做再分配）；③ 全社会<strong>价格总额 = 价值总额</strong>。
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 第 122 &amp; 165 题双重必考死坑：</strong><br>
+        只要看见“<span class="hl">垄断低价低于生产价格的部分 =（或相抵）垄断高价高于生产价格的部分</span>” → <strong>100% 必错！</strong>高价卖货和低价压原料都是巨头两头薅非垄断企业利润，两笔钱绝不相等！
+      </div>
+    </article>
+
+    <!-- Card 5-3 -->
+    <article class="card" id="c5-3" data-card="c5-3">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 3｜国家垄断资本主义（时间串台 &amp; 平级串台重灾区！）</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 166–168 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c5-3" type="button">○ 标为已懂</button>
+      </div>
+      <div class="warn-box">
+        <strong class="label">⏰ 坑 1｜时间线切分（166 题 vs 182 题）：</strong><br>
+        • <strong>国家垄断产生原因（一战期间产生）：</strong>① 生产力大到私人玩不转 + ② 经济危机深化 + ③ 缓和社会矛盾协调利益。<br>
+        • ❌ <strong>“社会主义阵营初步显示的优越性”</strong>是<strong>二战后</strong>才有的，属于 182 题“<strong>二战后资本主义发生变化的原因</strong>”，绝不是一战国家垄断产生的原因！
+      </div>
+      <div class="tbl-wrap" style="margin-top:10px;">
+        <table>
+          <thead><tr><th>国家垄断 4 大平级形式（167 全选）</th><th>下面包什么？（168 题专考平级串台！）</th></tr></thead>
+          <tbody>
+            <tr><td>① 国家所有并直接经营企业</td><td>国有企业直营</td></tr>
+            <tr><td>② 国家与私人共有、合营企业</td><td>国私合营</td></tr>
+            <tr><td>③ <strong>国家参与私人垄断资本的再生产过程</strong></td><td><strong>只包含 3 招：国家大量订货 + 津贴补助资助 + 社会福利开支扩大消费</strong></td></tr>
+            <tr><td>④ <strong>宏观调节和微观规制</strong></td><td><strong>财政政策、货币政策调节社会总供给和总需求</strong>（属于宏观调节，<strong>绝不属于③</strong>！）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- Card 5-4 -->
+    <article class="card" id="c5-4" data-card="c5-4">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 4｜金融垄断 + 资本输出 + 国际垄断 + 经济全球化</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 169–175 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c5-4" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>模块</th><th>核心结论</th><th>必排死坑</th></tr></thead>
+          <tbody>
+            <tr><td><strong>金融垄断后果（169）</strong></td><td>全面<strong>“脱实向虚”</strong>：金融地位↑、实体利润流向金融、制造减员服务扩员、虚拟脱离实体（全选）</td><td>—</td></tr>
+            <tr><td><strong>资本输出 3 形式（170）</strong></td><td><strong>借贷资本 + 生产资本 + 商品资本</strong></td><td>❌ <strong>没有“技术资本输出”</strong>！（转移非要害技术是 171 题的“动因”）</td></tr>
+            <tr><td><strong>资本输出动因（171）</strong></td><td>过剩资本找高利 + 移非要害技术 + 抢市场原料能源</td><td>❌ 绝不能“<strong>化解资本主义基本矛盾</strong>”</td></tr>
+            <tr><td><strong>国际垄断同盟（172）</strong></td><td>记四个字：<strong>早卡当国</strong><br>早期 = <strong>国际卡特尔</strong>；当代 = <strong>国家垄断资本主义国际联盟</strong></td><td>❌ 早期不是“跨国公司”；❌ 当代不把“国际卡特尔”混进来</td></tr>
+            <tr><td><strong>经济全球化（173–175）</strong></td><td><strong>3 推手：</strong>科技生产力 + 跨国公司 + 体制变革与国际组织。<br><strong>负面：</strong>地位收益不平等 + 资源短缺污染 + 增加经济风险。</td><td>❌ 发展中国家斗争不是推手；<br>❌ 国际金融危机<strong>不是</strong>全球化必然产物（根源是金融过度逐利+监管缺失）；<br>❌ 全球化给发展中国家是<strong>增加</strong>就业（不是丧失！）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- Card 5-5 -->
+    <article class="card" id="c5-5" data-card="c5-5">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 5｜二战后资本主义新变化（5 大模块全切分）</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 176–183 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c5-5" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>变化板块</th><th>必背核心结论</th><th>必排死坑</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1. 生产资料所有制<br>（176–177）</strong></td><td>• <strong>法人资本所有制</strong>占<strong>主导地位</strong>，存在于巨型公司，股权高度集中 → 所有权与控制权<strong>重新合一</strong>。<br>• <strong>国家资本所有制</strong>比重不大，主要在<strong>基建和公共事业</strong>。</td><td>❌ 国家资本没有取代法人占主导；<br>❌ “所有权与控制权分离（不再统一）”是旧的<strong>私人股份制</strong>，不是法人资本！</td></tr>
+            <tr><td><strong>2. 劳资分配（178）</strong></td><td>职工参与决策 + 终身雇佣、职工持股 + 全民化福利制度</td><td>❌ 绝没有“<strong>职工选举管理者制度</strong>”</td></tr>
+            <tr><td><strong>3. 70 年代滞胀后<br>（179–180）</strong></td><td><strong>经济三板斧（弱化干预）：</strong>国企私有化 + 改福利减财政 + 放松经济金融管制。<br><strong>危机 4 新特点（全选）：</strong>去工业化空心化 + 两极分化 + 周期结构交织 + 虚实脱节。</td><td>❌ 别把“政治制度多元化、扩大公民权利”混进 70 年代经济改革里（那是政治板块！）</td></tr>
+            <tr><td><strong>4. 政治制度（181）</strong></td><td>政治多元化公民权扩大 + 加强法治 + 改良主义政党影响扩大</td><td>❌ “通过<strong>政策咨询机构</strong>施加影响”的主语是<strong>金融寡头</strong>，换成“普通民众”必错！</td></tr>
+            <tr><td><strong>5. 原因与实质<br>（182–183）</strong></td><td><strong>原因：</strong>科技生产力（根本）+ 工人斗争（重要）+ 社会主义优越性 + 改良政党修补。<br><strong>实质：</strong>根本性质、追逐剩余价值本性、两极分化基础<strong>全没变</strong>。</td><td>❌ 改良主义政党<strong>绝不触动基本经济制度</strong>；<br>❌ “获取剩余价值的<strong>方式和方法没有改变</strong>”必错！（从绝对转向相对，<strong>方式变了</strong>！）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- Card 5-6 -->
+    <article class="card" id="c5-6" data-card="c5-6">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 6｜21 世纪新变化 + “三失”内部矛盾（防兄弟串台！）</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 184–189 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c5-6" type="button">○ 标为已懂</button>
+      </div>
+      <div class="split">
+        <div class="sub-card">
+          <h4>21 世纪 4 大平级新特征（184–186）</h4>
+          <ul>
+            <li><strong>① 科技创新加速生产方式变化</strong><br><small>↳ 下属 3 项：产业结构调整 + 生产组织和劳动形式变化 + 新经济形态出现</small></li>
+            <li><strong>② 国际金融垄断资本影响凸显</strong>（最突出鲜明）<br><small>↳ 下属 4 化：寡头化 + 国际化 + 虚拟化 + 空心化</small></li>
+            <li><strong>③ 社会阶级层级结构复杂多样</strong>（平级兄弟！<strong>不是①的下属</strong>，185 题必排！）</li>
+            <li><strong>④ 凭借优势推行霸权主义强权政治</strong></li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h4>当代内部矛盾只有“三失”（187–189）</h4>
+          <ul>
+            <li><strong>① 经济发展失调：</strong>福利风险增加 + 债务沉重 + 虚实失衡</li>
+            <li><strong>② 政治体制失灵（西式民主 4 弊端全选）：</strong>难以选贤 + 党争压过国家利益 + 民主陷阱 + 传统精英衰落</li>
+            <li><strong>③ 社会融合机制失效：</strong><strong>社会流动性退化</strong>（阶层固化，<strong>不是①经济失调</strong>，188 题必排！）</li>
+            <li>❌ <strong>没有“生态领域失控”</strong>（187 题凑数项必排！）</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 5-7 -->
+    <article class="card" id="c5-7" data-card="c5-7">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 7｜资本积累与资本主义历史趋势</h3>
+          <div class="q-ref"><span class="q-tag">对应 第 190 题</span></div>
+        </div>
+        <button class="check-btn" data-card="c5-7" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li>✅ 资本不断积累 → 必然提高<strong>生产社会化程度</strong> + 必然导致<strong>生产集中和资本集中</strong> + 为<strong>否定资本主义自身准备物质条件</strong>。</li>
+      </ul>
+      <div class="trap-box">
+        <strong class="label">❌ 方向说反必排：</strong>管理高度社会化后全交给职业经理人和机构管，对资本家个人在管理中的地位是<strong>弱化甚至排斥</strong>，绝不是“<span class="hl">不断增强</span>”！
+      </div>
+    </article>
+  </section>
+
+  <!-- ==================== TAB 3: RED/BLACK TRAPS ==================== -->
+  <section class="panel" id="panel-traps">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">🚫 考场黑榜：在第四、五章看见这 16 句话，直接划掉！</h3>
+        </div>
+      </div>
+      <div class="kill-item"><span class="kill-badge">必排 1</span><div><strong>使用价值寓于价值之中 / 劳动是一切社会财富的唯一源泉</strong><div class="kill-fix">真相：价值寓于使用价值之中；劳动只是“价值”的唯一源泉，社会财富还靠自然资源。（Q115）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 2</span><div><strong>抽象劳动（或具体劳动）转移可变资本 / 劳动力自身的价值</strong><div class="kill-fix">真相：只有生产资料（不变资本）的价值是“转移”的；劳动力价值永远是抽象劳动“新创造/再生产”出来的。（Q117、130、134）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 3</span><div><strong>不变资本就是固定资本 / 流动资本全部是价值的源泉</strong><div class="kill-fix">真相：“原料燃料”既是不变资本又是流动资本，两边不能画等号！（Q135、136）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 4</span><div><strong>利润率总是大于剩余价值率</strong><div class="kill-fix">真相：m/(c+v) 永远小于 m/v。（Q152）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 5</span><div><strong>平均利润形成后，每个部门获得的利润 = 该部门生产的剩余价值</strong><div class="kill-fix">真相：只有“全社会”总利润 = 总剩余价值，单个部门并不相等。（Q153）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 6</span><div><strong>垄断高价高于生产价格的部分 =（或相抵）垄断低价低于生产价格的部分</strong><div class="kill-fix">真相：全社会价格总额 = 价值总额是对的，但垄断高价溢价和低价折价绝不相等！（Q122、165）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 7</span><div><strong>马克思首次提出“劳动创造价值” / 剩余价值理论是“理解政治经济学的枢纽”</strong><div class="kill-fix">真相：亚当·斯密先提劳动创造价值；“枢纽”是劳动二重性，剩余价值理论是“基石”。（Q127、154）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 8</span><div><strong>自动化条件下资本有机构成降低 / 科技成为独立剩余价值源泉</strong><div class="kill-fix">真相：机器换人 c:v 是提高；雇佣工人剩余劳动永远是唯一源泉。（Q141）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 9</span><div><strong>货币的出现标志着进入资本主义商品生产阶段</strong><div class="kill-fix">真相：标志是“劳动力成为商品”。（Q121）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 10</span><div><strong>生产集中和资本集中是最简单初级的垄断组织形式</strong><div class="kill-fix">真相：最简单初级垄断组织形式 = 短期价格协定。（Q158）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 11</span><div><strong>技术资本输出是垄断资本对外扩展的基本形式</strong><div class="kill-fix">真相：只有借贷、生产、商品三种；转移非要害技术是“动因”。（Q170）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 12</span><div><strong>法人资本所有制特点是所有权与控制权分离 / 国家资本取代法人占主导</strong><div class="kill-fix">真相：法人占主导且所有权与控制权“重新合一”；分离是旧私人股份制。（Q176、177）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 13</span><div><strong>建立职工选举管理者制度 / 民众通过政策咨询机构参与决策</strong><div class="kill-fix">真相：无职工选管理者；政策咨询机构的主语是“金融寡头”。（Q178、181）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 14</span><div><strong>二战后获取剩余价值的方式和方法没有改变 / 改良政党触动基本经济制度</strong><div class="kill-fix">真相：剥削本性没变，但获取方式变了（绝对→相对）；改良绝不触动基本经济制度。（Q182、183）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 15</span><div><strong>国际金融危机是经济全球化的必然产物 / 全球化使发展中国家丧失就业</strong><div class="kill-fix">真相：危机根源是金融过度逐利+监管缺失；全球化给发展中国家“增加”了就业。（Q174、175）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 16</span><div><strong>生态领域失控 / 始终阻碍社会进步 / 彻底消灭失业 / 增强资本家个人管理地位</strong><div class="kill-fix">真相：当代内部矛盾只有“三失”（无生态失控）；资本主义政治曾有进步性；不能彻底消灭失业；管理社会化是“弱化排斥”资本家个人管理地位。（Q145、155、187、190）</div></div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">🔀 10 组必考“张冠李戴 / 串台”总对照表</h3>
+        </div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>易混 A 项</th><th>易混 B 项（考场专爱把 B 塞进 A 里！）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>资本主义产生途径</strong>：小商品分化 + 商人高利贷者转化</td><td><strong>资本原始积累手段</strong>：暴力抢土地 + 暴力抢货币（Q128）</td></tr>
+            <tr><td><strong>资本积累规模 4 因素</strong>：剥削程度、生产率、所用所费差额、预付资本</td><td><strong>资本周转快慢 2 因素</strong>：周转时间 + 固定/流动资本构成（Q144 vs 148）</td></tr>
+            <tr><td><strong>资本技术构成</strong>：实物数量比例（1 人管几台机器）</td><td><strong>资本有机构成</strong>：由技术构成决定并反映其变化的价值构成 c:v（Q146）</td></tr>
+            <tr><td><strong>自由竞争目的</strong>：更多利润 / 超额利润、扩大积累</td><td><strong>垄断竞争目的</strong>：高额垄断利润 + 巩固扩大垄断统治（Q160）</td></tr>
+            <tr><td><strong>国家垄断产生原因（一战）</strong>：生产力 + 危机 + 缓和矛盾</td><td><strong>二战后资本主义变化原因</strong>：科技 + 工人斗争 + 社会主义优越性（Q166 vs 182）</td></tr>
+            <tr><td><strong>国家参与再生产过程</strong>：订货 + 津贴补助 + 福利扩大消费</td><td><strong>国家宏观调节</strong>：财政政策 + 货币政策调总供求（Q168）</td></tr>
+            <tr><td><strong>早期国际垄断同盟</strong>：国际卡特尔</td><td><strong>当代国际垄断同盟</strong>：国家垄断资本主义的国际联盟（Q172）</td></tr>
+            <tr><td><strong>私人股份资本所有制</strong>：所有权与控制权分离</td><td><strong>法人资本所有制</strong>：股权集中，所有权与控制权重新合一（Q177）</td></tr>
+            <tr><td><strong>科技创新加速生产方式（3 小项）</strong>：产业结构 + 组织劳动形式 + 新经济形态</td><td><strong>平级兄弟项</strong>：社会阶级层级结构复杂多样（Q185）</td></tr>
+            <tr><td><strong>经济发展失调</strong>：福利风险 + 债务沉重 + 虚实失衡</td><td><strong>社会融合机制失效</strong>：社会流动性退化（阶层固化）（Q188）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 4: 20-ITEM FAST QUIZ ==================== -->
+  <section class="panel" id="panel-quiz">
+    <div class="quiz-header">
+      <div>
+        <div class="quiz-score" id="quizScore">快判得分：0 / 20（先做到 18 分以上再回题库！）</div>
+        <div style="font-size:12.5px;color:var(--muted);">全部改编自第 114–190 题最高频失分选项，判断这句话在多选题里该“选”还是该“排”！</div>
+      </div>
+      <button class="pill primary" id="resetQuizBtn" type="button">🔄 重测一遍</button>
+    </div>
+    <div id="quizContainer"></div>
+  </section>
+</main>
+
+<script>
+(function() {
+  const STORE_MASTER = "ky_ch45_master_v1";
+  const STORE_THEME = "ky_ch45_theme_v1";
+
+  // 1. Tab switching
+  const tabBtns = document.querySelectorAll(".tab-btn");
+  const panels = document.querySelectorAll(".panel");
+  tabBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = btn.dataset.tab;
+      tabBtns.forEach(b => b.classList.toggle("active", b === btn));
+      panels.forEach(p => p.classList.toggle("active", p.id === "panel-" + target));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  // Hide "back to drill" link if opened as standalone local file without index.html next to it
+  if (location.protocol === "file:") {
+    const backLink = document.getElementById("backDrillLink");
+    if (backLink) backLink.href = "./马原全212题_云同步刷题本.html";
+  }
+
+  // 2. Dark mode
+  const themeBtn = document.getElementById("themeBtn");
+  function applyTheme(t) {
+    if (t === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      themeBtn.textContent = "☀️ 日间";
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      themeBtn.textContent = "🌙 夜间";
+    }
+  }
+  let theme = "light";
+  try { theme = localStorage.getItem(STORE_THEME) || "light"; } catch (e) {}
+  applyTheme(theme);
+  themeBtn.addEventListener("click", () => {
+    theme = theme === "dark" ? "light" : "dark";
+    try { localStorage.setItem(STORE_THEME, theme); } catch (e) {}
+    applyTheme(theme);
+  });
+
+  // 3. Mastery progress tracking (17 cards)
+  let mastered = {};
+  try { mastered = JSON.parse(localStorage.getItem(STORE_MASTER) || "{}") || {}; } catch (e) {}
+  const allCheckBtns = document.querySelectorAll(".check-btn");
+  const masterText = document.getElementById("masterText");
+  const masterFill = document.getElementById("masterFill");
+
+  function renderMaster() {
+    let count = 0;
+    allCheckBtns.forEach(btn => {
+      const id = btn.dataset.card;
+      const done = !!mastered[id];
+      if (done) count++;
+      btn.classList.toggle("done", done);
+      btn.textContent = done ? "✓ 已掌握" : "○ 标为已懂";
+      const card = document.querySelector('.card[data-card="' + id + '"]');
+      if (card) card.classList.toggle("mastered", done);
+    });
+    const total = allCheckBtns.length;
+    masterText.textContent = "通关进度：" + count + " / " + total + " 卡";
+    masterFill.style.width = Math.round((count / total) * 100) + "%";
+  }
+
+  allCheckBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.card;
+      mastered[id] = !mastered[id];
+      try { localStorage.setItem(STORE_MASTER, JSON.stringify(mastered)); } catch (e) {}
+      renderMaster();
+    });
+  });
+  renderMaster();
+
+  // 4. 20 Rapid-Fire Exam Traps Quiz
+  const QUIZ = [
+    { q: "使用价值寓于价值之中，并通过价值表现出来。", ok: false, ref: "Q115", why: "说反了！是“价值寓于使用价值之中”，使用价值是价值的物质承担者。" },
+    { q: "具体劳动转移生产资料（不变资本）的价值，抽象劳动新创造劳动力自身价值和剩余价值。", ok: true, ref: "Q117/134", why: "完全精准！记住：生产资料价值 = 转移，劳动力价值 = 新创造/再生产。" },
+    { q: "同一时间内，部门劳动生产率提高时，商品使用价值量增加，单位商品价值量降低。", ok: true, ref: "Q120", why: "正确！1 小时造的件数翻倍、总价值不变，平摊到单件就减半。" },
+    { q: "购买商品房按合同约定第二年付房款 10 万元，这属于货币的支付手段职能。", ok: true, ref: "Q125", why: "正确！钱货不同步（分期/延期/还债）以及交税、发工资、交房租全都是支付手段。" },
+    { q: "马克思的劳动价值论首次提出了“劳动创造价值”的观点。", ok: false, ref: "Q127", why: "错！亚当·斯密早就提出劳动创造价值了；马克思首创的是“劳动二重性”。" },
+    { q: "用暴力手段剥夺农民土地、掠夺货币财富，属于资本主义产生的两条途径。", ok: false, ref: "Q128", why: "串台！那是“资本原始积累的手段”；产生途径是“小商品分化 + 商人高利贷者转化”。" },
+    { q: "不变资本就是固定资本，全部流动资本都是价值的源泉。", ok: false, ref: "Q135/136", why: "双重死坑！原料燃料既是不变资本又是流动资本，两边不能画等号。" },
+    { q: "生产自动化条件下，资本的有机构成进一步提高，雇佣工人的剩余劳动仍是剩余价值的唯一源泉。", ok: true, ref: "Q141", why: "全对！机器换人让 c:v 提高，机器本身绝不生剩余价值。" },
+    { q: "由生产技术水平决定的生产资料和劳动力之间的比例，叫作资本的有机构成。", ok: false, ref: "Q146", why: "错！纯实物比例叫“技术构成”；必须“反映技术构成变化的价值构成”才叫有机构成。" },
+    { q: "所用资本和所费资本的差额、预付资本大小，是影响资本周转快慢的关键因素。", ok: false, ref: "Q144/148", why: "串台！那俩决定“资本积累规模”；影响周转快慢只看“周转时间 + 固定/流动构成”。" },
+    { q: "在现实资本主义经济中，利润率总是小于剩余价值率。", ok: true, ref: "Q152", why: "正确！m/(c+v) 分母一定比 m/v 大。" },
+    { q: "平均利润形成后，全社会总利润等于总剩余价值，且每个部门利润都等于该部门剩余价值。", ok: false, ref: "Q153", why: "后半句错！全社会总账相等，但单个部门按资本平分后利润 ≠ 本部门剩余价值。" },
+    { q: "生产集中和资本集中是最简单的、初级的垄断组织形式。", ok: false, ref: "Q158", why: "张冠李戴！最简单初级的垄断组织形式是“短期价格协定”。" },
+    { q: "从全社会看，垄断低价低于生产价格的部分等于垄断高价高于生产价格的部分。", ok: false, ref: "Q122/165", why: "必排超级死坑！全社会价格总额=价值总额是对的，但垄断高价溢价和低价折价绝不相等！" },
+    { q: "运用财政政策、货币政策调节社会总供求，属于国家参与私人垄断资本再生产过程的方式。", ok: false, ref: "Q168", why: "平级串台！财政/货币政策属于“宏观调节”；参与再生产是“订货+津贴补助+福利扩大消费”。" },
+    { q: "垄断资本向世界范围扩展的基本形式包括借贷资本输出、生产资本输出和商品资本输出。", ok: true, ref: "Q170", why: "正确！只有这三种，没有“技术资本输出”。" },
+    { q: "早期国际垄断同盟主要是国际卡特尔，当代主要是国家垄断资本主义的国际联盟。", ok: true, ref: "Q172", why: "正确！死记四个字：早卡当国。" },
+    { q: "二战后法人资本所有制成为主导，其主要特点是所有权与控制权重新趋于合一。", ok: true, ref: "Q177", why: "正确！旧的私人股份制才是两权分离，法人资本是股权高度集中、重新合一。" },
+    { q: "二战后资本主义国家获取剩余价值的方式和方法没有改变。", ok: false, ref: "Q183", why: "错！剥削本性没变，但获取方式从绝对剩余价值转向相对剩余价值，已经变了！" },
+    { q: "2008 年危机后，“社会流动性退化”属于经济发展失调的表现，“生态领域失控”也是内部矛盾之一。", ok: false, ref: "Q187/188", why: "双重死坑！社会流动性退化归“社会融合机制失效”；当代内部矛盾只有“三失”，无“生态失控”！" }
+  ];
+
+  const quizContainer = document.getElementById("quizContainer");
+  const quizScore = document.getElementById("quizScore");
+  let quizAnswers = {};
+
+  function renderQuiz() {
+    quizContainer.innerHTML = "";
+    QUIZ.forEach((item, idx) => {
+      const card = document.createElement("div");
+      card.className = "quiz-card";
+      card.innerHTML =
+        '<p class="quiz-q"><span class="quiz-num">第 ' + (idx + 1) + ' 判 · ' + item.ref + '</span>' + item.q + '</p>' +
+        '<div class="quiz-btns">' +
+          '<button type="button" class="q-choice" data-idx="' + idx + '" data-val="true">✅ 正确（应选）</button>' +
+          '<button type="button" class="q-choice" data-idx="' + idx + '" data-val="false">❌ 陷阱（排除）</button>' +
+        '</div>' +
+        '<div class="quiz-fb" id="qfb-' + idx + '"></div>';
+      quizContainer.appendChild(card);
+    });
+
+    quizContainer.querySelectorAll(".q-choice").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const idx = Number(btn.dataset.idx);
+        const val = btn.dataset.val === "true";
+        const item = QUIZ[idx];
+        const isRight = (val === item.ok);
+        quizAnswers[idx] = isRight;
+
+        const pair = quizContainer.querySelectorAll('.q-choice[data-idx="' + idx + '"]');
+        pair.forEach(b => { b.classList.remove("picked-ok", "picked-err"); });
+        btn.classList.add(isRight ? "picked-ok" : "picked-err");
+
+        const fb = document.getElementById("qfb-" + idx);
+        fb.className = "quiz-fb show " + (isRight ? "ok" : "err");
+        fb.innerHTML = (isRight ? "<strong>🎯 判对了！</strong>" : "<strong>💥 踩坑啦！</strong>") + item.why;
+        updateQuizScore();
+      });
+    });
+    updateQuizScore();
+  }
+
+  function updateQuizScore() {
+    const answered = Object.keys(quizAnswers).length;
+    const correct = Object.values(quizAnswers).filter(Boolean).length;
+    const tip = answered === QUIZ.length
+      ? (correct >= 18 ? " 🎉 通关！快回去秒杀第 114–190 题！" : " 💪 再扫一遍错判点，稳上 18 分！")
+      : "（目标 18 分以上再回题库）";
+    quizScore.textContent = "快判得分：" + correct + " / " + QUIZ.length + "（已判 " + answered + " 题）" + tip;
+  }
+
+  document.getElementById("resetQuizBtn").addEventListener("click", () => {
+    quizAnswers = {};
+    renderQuiz();
+  });
+
+  renderQuiz();
+})();
+</script>
+</body>
+</html>

@@ -508,6 +508,7 @@
           <button type="button" class="pill" id="filterTodoBtn">未做</button>
         </div>
         <div class="ctrl-pills">
+          <a class="pill" href="./ch45.html" id="ch45Link">📖 四五章考点</a>
           <button type="button" class="pill" id="collapseBtn">收起答案</button>
           <button type="button" class="pill" id="themeBtn">🌙 夜间</button>
         </div>
@@ -4314,6 +4315,11 @@
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden && cloud.token) syncPull(true);
   });
+
+  if (location.protocol === "file:") {
+    const c45 = document.getElementById("ch45Link");
+    if (c45) c45.href = "./马原第四五章_政经纯应试考点通关手册.html";
+  }
 
   // Init
   loadLocal();

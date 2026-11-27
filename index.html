@@ -510,6 +510,7 @@
         <div class="ctrl-pills">
           <a class="pill" href="./ch45.html" id="ch45Link">📖 四五章考点</a>
           <a class="pill" href="./mzt.html" id="mztLink">📘 毛中特115</a>
+          <a class="pill" href="./xxs.html" id="xxsLink">📙 新思想220</a>
           <button type="button" class="pill" id="collapseBtn">收起答案</button>
           <button type="button" class="pill" id="themeBtn">🌙 夜间</button>
         </div>
@@ -4213,7 +4214,7 @@
       return;
     }
     const payload = btoa(unescape(encodeURIComponent(cloud.provider + "|" + cloud.token + "|" + cloud.gistId)));
-    const base = location.href.split("#")[0];
+    const base = location.protocol === "file:" ? "https://lany297.github.io/ky-notes/" : location.href.split("#")[0];
     const magic = base + "#sync=" + payload;
     try {
       await navigator.clipboard.writeText(magic);
@@ -4322,6 +4323,8 @@
     if (c45) c45.href = "./马原第四五章_政经纯应试考点通关手册.html";
     const mz = document.getElementById("mztLink");
     if (mz) mz.href = "./毛中特全115题_单选多选云同步刷题本(P65-81).html";
+    const xx = document.getElementById("xxsLink");
+    if (xx) xx.href = "./新思想全220题_单选多选云同步刷题本(P82-112).html";
   }
 
   // Init

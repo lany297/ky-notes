@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0f766e">
+<title>新思想（P82–112）· 纯应试考点通关手册（对应 93 单选 + 127 多选）</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2328;
+    --muted: #59636e;
+    --border: #e5e8ec;
+    --accent: #0f766e;
+    --accent-soft: #ecfdf5;
+    --accent-border: #a7f3d0;
+    --blue: #0369a1;
+    --blue-soft: #f0f9ff;
+    --blue-border: #bae6fd;
+    --ok: #15803d;
+    --ok-bg: #dcfce7;
+    --ok-border: #86efac;
+    --err: #b91c1c;
+    --err-bg: #fef2f2;
+    --err-border: #fecaca;
+    --warn: #b45309;
+    --warn-bg: #fffbeb;
+    --warn-border: #fde68a;
+    --shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  }
+  [data-theme="dark"] {
+    --bg: #111418;
+    --card: #1a1f26;
+    --text: #e6edf3;
+    --muted: #9aa4b2;
+    --border: #2c3440;
+    --accent: #34d399;
+    --accent-soft: #102620;
+    --accent-border: #1e4d3f;
+    --blue: #38bdf8;
+    --blue-soft: #122436;
+    --blue-border: #1e3f5e;
+    --ok: #4ade80;
+    --ok-bg: #122e1d;
+    --ok-border: #1f5c35;
+    --err: #f87171;
+    --err-bg: #36181a;
+    --err-border: #6b262a;
+    --warn: #fbbf24;
+    --warn-bg: #2e220f;
+    --warn-border: #5c4319;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 15.5px;
+    line-height: 1.68;
+    padding-bottom: 84px;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: color-mix(in srgb, var(--card) 94%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 12px;
+  }
+  .topbar-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+  .top-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .brand { font-weight: 700; font-size: 15px; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+  .pill {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .pill.primary { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; }
+
+  .tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .tab-btn {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    padding: 7px 6px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+  }
+  .tab-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  @media (max-width: 520px) { .tab-btn { font-size: 11.8px; padding: 6px 3px; } }
+
+  .wrap { max-width: 860px; margin: 0 auto; padding: 14px 12px 0; }
+  .hero {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+  }
+  .hero h1 { margin: 0 0 6px; font-size: 18px; line-height: 1.35; }
+  .hero-sub { margin: 0 0 10px; font-size: 13.5px; color: var(--muted); }
+  .progress-bar-wrap { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--muted); }
+  .progress-track { flex: 1; height: 8px; background: var(--bg); border-radius: 999px; overflow: hidden; border: 1px solid var(--border); }
+  .progress-fill { height: 100%; width: 0%; background: var(--accent); transition: width 0.25s ease; }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .jump-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .jump-chip {
+    font-size: 12px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .jump-chip:hover { border-color: var(--accent); color: var(--accent); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 15px 16px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 112px;
+  }
+  .card.mastered { border-color: var(--accent-border); }
+  .card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .card-title-wrap { display: flex; flex-direction: column; gap: 4px; }
+  .card-title { margin: 0; font-size: 16.5px; font-weight: 700; color: var(--text); }
+  .q-ref { display: inline-flex; flex-wrap: wrap; gap: 5px; font-size: 12px; color: var(--accent); font-weight: 600; }
+  .q-tag { background: var(--accent-soft); border: 1px solid var(--accent-border); padding: 1px 7px; border-radius: 999px; color: var(--accent); }
+  .check-btn {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .check-btn.done { background: var(--ok-bg); border-color: var(--ok-border); color: var(--ok); font-weight: 600; }
+
+  .tldr { background: var(--blue-soft); border-left: 4px solid var(--blue); border-radius: 0 10px 10px 0; padding: 9px 12px; margin: 8px 0 10px; font-size: 14.5px; }
+  .trap-box { background: var(--err-bg); border: 1px solid var(--err-border); border-radius: 10px; padding: 9px 12px; margin-top: 10px; font-size: 14px; }
+  .trap-box strong.label { color: var(--err); }
+  .ok-box { background: var(--ok-bg); border: 1px solid var(--ok-border); border-radius: 10px; padding: 9px 12px; margin-top: 8px; font-size: 14px; }
+  .ok-box strong.label { color: var(--ok); }
+  .warn-box { background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 10px; padding: 9px 12px; margin-top: 8px; font-size: 14px; }
+  .warn-box strong.label { color: var(--warn); }
+
+  .tbl-wrap { overflow-x: auto; margin: 8px 0; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 440px; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th:last-child, td:last-child { border-right: none; }
+  tr:last-child td { border-bottom: none; }
+  th { background: var(--bg); font-weight: 700; white-space: nowrap; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 8px 0; }
+  @media (max-width: 600px) { .split { grid-template-columns: 1fr; } }
+  .sub-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+  .sub-card h4 { margin: 0 0 6px; font-size: 14.5px; color: var(--accent); }
+  .sub-card ul, .clean-ul { margin: 4px 0 0; padding-left: 18px; }
+  .sub-card li, .clean-ul li { margin-bottom: 4px; }
+
+  .kill-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--err-bg);
+    border: 1px solid var(--err-border);
+    margin-bottom: 9px;
+    font-size: 14.5px;
+  }
+  .kill-badge { background: var(--err); color: #fff; font-size: 11.5px; font-weight: 700; padding: 2px 7px; border-radius: 6px; flex-shrink: 0; margin-top: 2px; }
+  .kill-fix { color: var(--muted); font-size: 13.5px; margin-top: 3px; }
+
+  .quiz-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  .quiz-score { font-weight: 700; font-size: 15px; color: var(--accent); }
+  .quiz-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 15px; margin-bottom: 11px; box-shadow: var(--shadow); }
+  .quiz-q { font-size: 15px; font-weight: 600; margin: 0 0 10px; }
+  .quiz-num { display: inline-block; background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-border); border-radius: 6px; padding: 0 6px; font-size: 12px; margin-right: 6px; }
+  .quiz-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .q-choice { border: 1px solid var(--border); background: var(--bg); color: var(--text); padding: 9px 10px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .q-choice:hover { border-color: var(--accent); }
+  .q-choice.picked-ok { background: var(--ok-bg); border-color: var(--ok-border); color: var(--ok); }
+  .q-choice.picked-err { background: var(--err-bg); border-color: var(--err-border); color: var(--err); }
+  .quiz-fb { margin-top: 9px; padding: 8px 11px; border-radius: 9px; font-size: 13.5px; display: none; }
+  .quiz-fb.show { display: block; }
+  .quiz-fb.ok { background: var(--ok-bg); border: 1px solid var(--ok-border); }
+  .quiz-fb.err { background: var(--err-bg); border: 1px solid var(--err-border); }
+  .hl { color: var(--err); font-weight: 700; }
+  .hl-acc { color: var(--accent); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="top-row">
+      <div class="brand">🎯 新思想纯应试通关 · 导论至第十七章（P82–112）</div>
+      <div class="top-actions">
+        <a class="pill" href="./xxs.html" id="toDrillLink">📝 去刷220题</a>
+        <button class="pill" id="themeBtn" type="button">🌙 夜间</button>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="p1" type="button">导论~8章 (9卡)</button>
+      <button class="tab-btn" data-tab="p2" type="button">9~17章 (9卡)</button>
+      <button class="tab-btn" data-tab="traps" type="button">帽子/红黑榜</button>
+      <button class="tab-btn" data-tab="quiz" type="button">⚡ 25题快判</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>先刷完这 18 张“帽子配对卡”，再回去横扫新思想全 220 题</h1>
+    <p class="hero-sub">新思想考得全都是<strong>精准戴帽子（主线/基点/关键/首位/根本/出发点）+ 一字之差偷换</strong>。下面 18 张卡 100% 紧贴 P82–112（93 单选 + 127 多选）真实扣分点，过完 <strong>⚡ 25 题快判</strong> 再刷题，正确率直接起飞！</p>
+    <div class="progress-bar-wrap">
+      <span id="masterText">通关进度：0 / 18 卡</span>
+      <div class="progress-track"><div class="progress-fill" id="masterFill"></div></div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 1: 导论~第8章 ==================== -->
+  <section class="panel active" id="panel-p1">
+    <div class="jump-row">
+      <a class="jump-chip" href="#x-1">1.导论/两个结合</a>
+      <a class="jump-chip" href="#x-2">2.自信/现代化</a>
+      <a class="jump-chip" href="#x-3">3.党领导/人民</a>
+      <a class="jump-chip" href="#x-4">4.改革开放</a>
+      <a class="jump-chip" href="#x-5">5.高质量发展/新质</a>
+      <a class="jump-chip" href="#x-6">6.经济/乡村/区域</a>
+      <a class="jump-chip" href="#x-7">7.教科技人才</a>
+      <a class="jump-chip" href="#x-8">8.民主/人大/政协</a>
+      <a class="jump-chip" href="#x-9">9.统战与民族</a>
+    </div>
+
+    <!-- Card 1 -->
+    <article class="card" id="x-1" data-card="x-1">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 1｜导论：科学体系 + 两个结合 + 六个必须坚持</h3>
+          <div class="q-ref"><span class="q-tag">单 1–2</span><span class="q-tag">多 1–9</span></div>
+        </div>
+        <button class="check-btn" data-card="x-1" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>体系模块 / 六个必须坚持</th><th>唯一精准帽子（单 1–2 必考）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>“十个明确”</strong></td><td>主体内容、<strong>四梁八柱、起统摄作用</strong>（十四个坚持=基本方略；十三个成就=成果）</td></tr>
+            <tr><td><strong>六个必须坚持（多 6 排 D）</strong></td><td>人民至上（<strong>根本价值立场</strong>）｜自信自立（<strong>内在精神特质</strong>）｜守正创新（<strong>鲜明理论品格</strong>）｜问题导向（<strong>重要实践要求</strong>）｜系统观念（<strong>基本思想和工作方法</strong>）｜胸怀天下（<strong>境界格局</strong>）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 3 个必排坑：</strong><br>
+        1. 新思想三大时代课题（多 5）：新时代中特 + 现代化强国 + 长期执政党（❌ “实现什么样的发展、怎样发展”是<strong>科学发展观</strong>的课题！）。<br>
+        2. “两个结合”是必由之路、根本途径、最大法宝（多 2）；❌ “坚定信仰信念、把握历史主动的根本所在”是<strong>拥有马克思主义科学理论指导</strong>，不是两个结合！<br>
+        3. “六个必须坚持”只含上述六项，❌ 不含“坚持党的领导、坚持实事求是”（多 6）。
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card" id="x-2" data-card="x-2">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 2｜第 1–2 章：四个自信 + 新时代 + 中国式现代化</h3>
+          <div class="q-ref"><span class="q-tag">单 3–8</span><span class="q-tag">多 10–20</span></div>
+        </div>
+        <button class="check-btn" data-card="x-2" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>四个自信（单 3–4 / 多 10–12）：</strong>理论支撑和根本依据 = <strong>社会主义必然代替资本主义的客观规律</strong>；说到底要坚定<strong>文化自信</strong>（更基础更广泛更深厚，最基本最深沉最持久力量）；改革开放以来取得成绩的根本原因 = 道路+理论+制度+文化（❌ 文化自信不是“世界各国人民价值最大公约数”，那是全人类共同价值！）。</li>
+        <li><strong>进入新时代（单 5–6 / 多 13–15）：</strong>基本依据 = <strong>我国社会主要矛盾发生新变化</strong>（2012）；❌ “进入新发展阶段”和“全面建成小康社会之后”都在 2021，绝不是 2012 进入新时代的依据！“四个全面”中居引领地位（战略目标）= <strong>全面建设社会主义现代化国家</strong>。</li>
+      </ul>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>中国式现代化 5 个中国特色</th><th>精准帽子（单 7 必考！）</th></tr></thead>
+          <tbody>
+            <tr><td>人口规模巨大</td><td><strong>显著特征</strong></td></tr>
+            <tr><td>全体人民共同富裕</td><td><strong>本质特征</strong> + <strong>区别于西方现代化的显著标志</strong></td></tr>
+            <tr><td>物质文明和精神文明相协调</td><td><strong>崇高追求</strong> / 根本要求（❌ 不能“先物质再精神”，须两手抓！）</td></tr>
+            <tr><td>人与自然和谐共生</td><td><strong>鲜明特点</strong>（不是“区别西方显著标志”！）</td></tr>
+            <tr><td>走和平发展道路</td><td><strong>突出特征</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 必排坑：</strong>现代化建设出发点和落脚点 = <strong>实现人民对美好生活的向往</strong>（单 8）；回答“关乎人类前途命运时代之问的中国方案” = <strong>推动构建人类命运共同体</strong>（不是中国式现代化！多 20）。
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card" id="x-3" data-card="x-3">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 3｜第 3–4 章：党的全面领导 + 以人民为中心 + 共同富裕</h3>
+          <div class="q-ref"><span class="q-tag">单 9–15</span><span class="q-tag">多 21–29</span></div>
+        </div>
+        <button class="check-btn" data-card="x-3" type="button">○ 标为已懂</button>
+      </div>
+      <div class="split">
+        <div class="sub-card">
+          <h4>党的全面领导 5 顶帽子（单 9–12 / 多 21–24）</h4>
+          <ul>
+            <li>中特最本质特征 / 最大优势 = <strong>中国共产党领导</strong></li>
+            <li>马克思主义政党<strong>第一位的能力</strong> = <strong>政治领导力</strong></li>
+            <li>党的领导<strong>最高原则</strong> = <strong>党中央集中统一领导</strong></li>
+            <li>制度体系中居<strong>统领地位</strong> = <strong>党的领导制度</strong>（它是根本<strong>领导</strong>制度，❌ 不是“根本<strong>政治</strong>制度”！根本政治制度是人大！）</li>
+            <li>❌ 党的领导是总揽全局协调各方，<strong>绝不是“事无巨细都去管”</strong>！</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h4>以人民为中心 &amp; 共同富裕（单 13–15 / 多 25–29）</h4>
+          <ul>
+            <li>做好一切工作的价值取向和根本标准 = <strong>让群众满意</strong></li>
+            <li>发展的出发点和落脚点 = <strong>满足人民对美好生活的新期待</strong></li>
+            <li>现代化的<strong>最终目标</strong> = <strong>人自由而全面的发展</strong></li>
+            <li><strong>共同富裕</strong> = 全体人民 + 物质精神双富 + 长期历史过程（❌ <strong>不是所有人同时富裕、不是所有地区同时达同一水准、绝不能等实现现代化后再解决</strong>！）</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="card" id="x-4" data-card="x-4">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 4｜第 5 章：全面深化改革开放（帽子最密，逐个锁死！）</h3>
+          <div class="q-ref"><span class="q-tag">单 16–23</span><span class="q-tag">多 30–38</span></div>
+        </div>
+        <button class="check-btn" data-card="x-4" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>问法定语</th><th>唯一正确对应</th></tr></thead>
+          <tbody>
+            <tr><td>鲜明特征和<strong>首要任务</strong> / 内在要求和基本目的</td><td><strong>解放和发展社会生产力</strong> / 解放和增强社会活力（单 16、22）</td></tr>
+            <tr><td>主题 / <strong>重点和牵引</strong> / <strong>主线</strong> / <strong>突破口</strong></td><td>中国式现代化 / <strong>经济体制改革</strong>（非文化体制！）/ <strong>制度建设</strong> / <strong>重要领域和关键环节改革</strong></td></tr>
+            <tr><td>进一步全面深化改革的<strong>出发点和落脚点</strong></td><td><strong>促进社会公平正义、增进人民福祉</strong>（单 22）</td></tr>
+            <tr><td>富有中国特色的改革方法 / 三者关系<strong>结合点</strong></td><td><strong>摸着石头过河</strong> / <strong>改善人民生活</strong>（单 19、20）</td></tr>
+            <tr><td>十五五扩大市场准入和开放领域的<strong>重点</strong></td><td><strong>服务业</strong>（单 23）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 6 个必排死坑（多 30–38）：</strong><br>
+        1. 改革开放是“关键一招”，❌ 实现民族复兴中国梦的“<strong>关键一步</strong>”是<strong>全面建成小康社会</strong>（多 30）。<br>
+        2. 开启改革开放新时期的是<strong>十一届三中全会</strong>（不是十八届三中！多 31）。<br>
+        3. 治理体系和治理能力相辅相成，❌ 但不能说“体系越完备能力就<strong>一定越强</strong>”（多 33）。<br>
+        4. 改革不可能“同时满足<strong>所有人</strong>的利益诉求”（多 35）；内外贸一体化无法“<strong>彻底消除</strong>外部不确定性”（多 36）。<br>
+        5. 外资经济是“<strong>社会主义市场经济</strong>”重要组成部分，❌ 绝不是“<strong>社会主义经济</strong>”（只有公有制才是社会主义经济！多 37）；外商投资也绝没形成“资本主导模式”（多 38）。
+      </div>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="card" id="x-5" data-card="x-5">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 5｜第 6 章（上）：新发展理念 + 高质量发展 + 新质生产力</h3>
+          <div class="q-ref"><span class="q-tag">单 24–33</span><span class="q-tag">多 39–44</span></div>
+        </div>
+        <button class="check-btn" data-card="x-5" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>五大新发展理念（最重要最主要）</th><th>定位帽子</th><th>解决什么问题？（多 40 必考！）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>创新</strong></td><td>引领发展的<strong>第一动力</strong></td><td>发展<strong>动力</strong>问题</td></tr>
+            <tr><td><strong>协调</strong></td><td>持续健康发展的内在要求</td><td>发展<strong>不平衡</strong>问题</td></tr>
+            <tr><td><strong>绿色</strong></td><td>永续发展的必要条件</td><td><strong>人与自然和谐共生</strong>问题</td></tr>
+            <tr><td><strong>开放</strong></td><td>国家繁荣发展的必由之路</td><td>发展<strong>内外联动</strong>问题</td></tr>
+            <tr><td><strong>共享</strong></td><td>中国特色社会主义的本质要求</td><td><strong>社会公平正义</strong>问题（❌ 不是“不平衡”！）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ok-box">
+        <strong class="label">✅ 高质量发展 &amp; 新质生产力 8 顶必背帽子：</strong><br>
+        • <strong>高质量发展：</strong>主线 = <strong>深化供给侧结构性改革</strong>｜战略基点 = <strong>加快构建新发展格局</strong>｜发展经济着力点 = <strong>实体经济</strong>｜高水平市场经济关键 = <strong>处理好政府和市场关系</strong>｜新发展格局最本质特征 = <strong>高水平自立自强</strong>｜重要前提和保障 = <strong>牢牢守住安全发展底线</strong>。<br>
+        • <strong>新质生产力：</strong>三大催生源 = 技术革命性突破 + 生产要素创新性配置 + 产业深度转型升级（❌ <strong>无“上层建筑跃升”</strong>）｜基本内涵 = 三要素优化组合跃升｜<strong>核心标志</strong> = <strong>全要素生产率大幅提升</strong>（别和基本内涵混！多 43）｜核心要素 = 科技创新｜两层面创新 = <strong>技术和业态模式 + 管理和制度</strong>（单 32）。<br>
+        • ❌ 新发展阶段不是所有国家必经阶段（多 39）；我国经济已转向高质量发展，❌ 不是“始终保持高速增长”（多 44）。
+      </div>
+    </article>
+
+    <!-- Card 6 -->
+    <article class="card" id="x-6" data-card="x-6">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 6｜第 6 章（下）：所有制 + 乡村振兴 + 区域与城镇化</h3>
+          <div class="q-ref"><span class="q-tag">单 34–38</span><span class="q-tag">多 45–56</span></div>
+        </div>
+        <button class="check-btn" data-card="x-6" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>所有制与大市场（多 45–50）：</strong>非公有制/民营经济是“<strong>社会主义市场经济</strong>”重要组成部分（❌ 绝不是“社会主义经济”！多 47）；“统一政府行为尺度”助于破内卷促公平，❌ 但不能说“<strong>从根本上杜绝</strong>寻租腐败”（多 50）。</li>
+        <li><strong>产业竞争力基石（单 34）：</strong><strong>保持优势产业的领先地位</strong>。</li>
+        <li><strong>乡村振兴 4+1 帽子（单 35–36 / 多 53–54）：</strong>总目标 = <strong>农业农村现代化</strong>｜总方针 = <strong>坚持农业农村优先发展</strong>｜总要求 = 产业兴旺等二十字｜制度保障 = 城乡融合体制机制｜基础 = <strong>发展乡村特色产业</strong>。农村基本经营制度 3 底线 = 土地公有制不改 + 耕地红线不破 + 农民利益不受损（❌ 土地经营权<strong>可以流转</strong>！）。</li>
+        <li><strong>区域与城镇化（单 37–38 / 多 55–56）：</strong><strong>区域协调发展战略</strong> = 东部加快现代化 / 西部 / 东北 / 中部（雄安、长江经济带、粤港澳大湾区属<strong>区域重大战略</strong>！）；高质量发展建设共同富裕示范区 = <strong>浙江</strong>（❌ 不是京津冀！）；新型城镇化首要任务 = <strong>推进农业转移人口市民化</strong>。</li>
+      </ul>
+    </article>
+
+    <!-- Card 7 -->
+    <article class="card" id="x-7" data-card="x-7">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 7｜第 7 章：教育、科技、人才战略</h3>
+          <div class="q-ref"><span class="q-tag">单 39–42</span><span class="q-tag">多 57–61</span></div>
+        </div>
+        <button class="check-btn" data-card="x-7" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>总定位（多 57 全选）：</strong>教育是根本、科技是关键、人才是基础；科技 = 第一生产力、人才 = 第一资源、创新 = 第一动力。</li>
+        <li><strong>教育（单 39–41 / 多 58）：</strong>建成教育强国是强国复兴伟业的<strong>先导任务、坚实基础、战略支撑</strong>（❌ 无“鲜明标识”）；教育根本任务 = <strong>立德树人</strong>；建设高质量教育体系根本在于<strong>深化教育综合改革</strong>。</li>
+        <li><strong>科技与人才（单 42 / 多 59–61）：</strong>科技创新的源头 = <strong>基础研究</strong>；自主创新三项 = <strong>原始创新 + 集成创新 + 开放创新</strong>（❌ 无“改革创新”）；❌ 党执政的最大底气是<strong>人民</strong>，引领发展的第一动力是<strong>创新</strong>，都别安在“人才”头上（多 61）！</li>
+      </ul>
+    </article>
+
+    <!-- Card 8 -->
+    <article class="card" id="x-8" data-card="x-8">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 8｜第 8 章（上）：全过程人民民主 + 人大 + 政协 + 基层</h3>
+          <div class="q-ref"><span class="q-tag">单 43–45</span><span class="q-tag">多 62–75</span></div>
+        </div>
+        <button class="check-btn" data-card="x-8" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>道路与制度（单 43–45 / 多 62–67）：</strong>坚定制度自信首先要坚定<strong>政治制度自信</strong>；走中特政治发展道路最根本 = <strong>坚持党的领导</strong>；新时代民主政治重大创新标志性成果 = <strong>全过程人民民主</strong>（❌ 不是协商民主！多 74）。</li>
+        <li><strong>人大 vs 政协（多 68–73）：</strong>人大 = 根本政治制度、国家权力机关；人民政协 = <strong>爱国统一战线组织 + 专门协商机构</strong>（❌ <strong>绝不是国家权力机关</strong>！多 73）。</li>
+      </ul>
+      <div class="trap-box">
+        <strong class="label">❌ 4 个必排死坑：</strong><br>
+        1. 全过程人民民主是本质属性，❌ 人民当家作主和依法治国的<strong>根本保证</strong>是<strong>党的领导</strong>（多 63）。<br>
+        2. 民主没有最好只有更好，❌ 不存在“<strong>最纯粹、最好的民主</strong>”或“人人民主”（多 66）。<br>
+        3. 人大制度是选举代表间接管理，❌ 不是“全体人民<strong>直接参与</strong>国家管理”（多 69）。<br>
+        4. ❌ 党内法规体系（管党员）<strong>不会上升为</strong>全社会遵守的法律规范体系（多 70）。
+      </div>
+    </article>
+
+    <!-- Card 9 -->
+    <article class="card" id="x-9" data-card="x-9">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 9｜第 8 章（下）：统一战线 + 民族共同体</h3>
+          <div class="q-ref"><span class="q-tag">单 46–49</span><span class="q-tag">多 76–78</span></div>
+        </div>
+        <button class="check-btn" data-card="x-9" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>民族工作（单 46 / 多 78）：</strong>民族团结之本 / 民族工作主线 = <strong>铸牢中华民族共同体意识</strong>。</li>
+        <li><strong>统一战线 3 顶帽子（单 47–49）：</strong>本质要求 = <strong>大团结大联合</strong>｜最鲜明特征 &amp; 最核心最根本问题 = <strong>党的领导</strong>｜新时代爱国统战历史责任 = <strong>促进中华儿女大团结</strong>。</li>
+      </ul>
+      <div class="trap-box">
+        <strong class="label">❌ 2 个必排坑（多 76–77）：</strong><br>
+        1. 中共区别于其他政党的显著标志 = <strong>勇于自我革命 / 人民立场 / 三大作风</strong>（❌ 不是统一战线！）。<br>
+        2. 统战三大“作用更加重要”= 维护主权安全发展利益 + 围绕中心服务大局 + 增强阶级基础扩大群众基础（❌ 不含“团结国际社会反对霸权主义”！）。
+      </div>
+    </article>
+  </section>
+
+  <!-- ==================== TAB 2: 第9~17章 ==================== -->
+  <section class="panel" id="panel-p2">
+    <div class="jump-row">
+      <a class="jump-chip" href="#x-10">10.依法治国</a>
+      <a class="jump-chip" href="#x-11">11.文化强国</a>
+      <a class="jump-chip" href="#x-12">12.民生社保</a>
+      <a class="jump-chip" href="#x-13">13.生态文明</a>
+      <a class="jump-chip" href="#x-14">14.国家安全</a>
+      <a class="jump-chip" href="#x-15">15.强军兴军</a>
+      <a class="jump-chip" href="#x-16">16.一国两制/台湾</a>
+      <a class="jump-chip" href="#x-17">17.大国外交</a>
+      <a class="jump-chip" href="#x-18">18.从严治党</a>
+    </div>
+
+    <!-- Card 10 -->
+    <article class="card" id="x-10" data-card="x-10">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 10｜第 9 章：全面依法治国（6 顶帽子 + 2 个必排）</h3>
+          <div class="q-ref"><span class="q-tag">单 50–55</span><span class="q-tag">多 79–82</span></div>
+        </div>
+        <button class="check-btn" data-card="x-10" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>定位</th><th>唯一正确对应</th></tr></thead>
+          <tbody>
+            <tr><td>法治之魂 / 同西方法治最大区别</td><td><strong>党的领导</strong>（单 50）</td></tr>
+            <tr><td>根本目的 / 社会主义法律基本属性</td><td><strong>依法保障人民权益</strong> / <strong>平等</strong>（单 51、52）</td></tr>
+            <tr><td>总抓手 / 依宪治国首要任务</td><td><strong>建设中特法治体系</strong> / <strong>全面贯彻实施宪法</strong>（单 53、54）</td></tr>
+            <tr><td>重点任务和主体工程</td><td><strong>法治政府建设</strong>（法治国家=目标，法治社会=基础！单 55）</td></tr>
+            <tr><td>法治道路<strong>核心要义</strong>（多 80）</td><td><strong>党的领导 + 中特制度 + 中特法治理论</strong>（❌ 不含“以人民为中心”——它属于五大原则！）</td></tr>
+            <tr><td>法治中国<strong>工作布局</strong>（多 82）</td><td><strong>三个共同推进 + 三个一体建设 + 统筹国内涉外法治</strong>（❌ 不含“科学立法、严格执法、公正司法、全民守法”！）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- Card 11 -->
+    <article class="card" id="x-11" data-card="x-11">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 11｜第 10 章：社会主义文化强国 + 中华文明特性</h3>
+          <div class="q-ref"><span class="q-tag">单 56–61</span><span class="q-tag">多 83–94</span></div>
+        </div>
+        <button class="check-btn" data-card="x-11" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>关键/根本标志/第一位（单 56–59, 61）：</strong>建设文化强国关键 = <strong>坚定中特文化自信</strong>｜哲学社科区别于其他的根本标志 = <strong>坚持以马克思主义为指导</strong>｜新闻舆论第一位要求 = <strong>坚持正确的政治方向</strong>｜创新创造 = <strong>文化的生命所在、本质特征</strong>｜满足文化需求基本途径 = <strong>繁荣发展文化事业和文化产业</strong>。</li>
+        <li><strong>“二为”方向 vs “双百”方针（多 88, 94）：</strong>决定社会主义文化事业前途命运的关键（根本方向）= <strong>为人民服务、为社会主义服务（二为）</strong>（❌ 不是“百花齐放、百家争鸣”重要方针，也不是“面向世界”！）。</li>
+        <li><strong>文化自信底气（多 87）：</strong>中华优秀传统文化（深厚基础）+ 革命和社会主义先进文化（坚强基石）+ 中特伟大实践（现实基础）（❌ 不含“全人类共同价值”！）。</li>
+      </ul>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>中华文明突出特性</th><th>从根本上决定什么？（单 60 / 多 91–92）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>连续性</strong></td><td><strong>中华民族必然走自己的路</strong></td></tr>
+            <tr><td><strong>统一性</strong></td><td>国家统一永远是中国核心利益的核心；国土不可分、国家不可乱…</td></tr>
+            <tr><td><strong>包容性</strong>（多 91）</td><td>交往交流交融历史取向 + 各宗教多元并存和谐格局 + 对世界文明兼收并蓄开放胸怀</td></tr>
+            <tr><td><strong>和平性</strong>（多 92）</td><td>世界和平建设者… + <strong>不断追求文明交流互鉴而不搞文化霸权</strong>（❌ 别塞进包容性里！）+ 不强加价值观 + 不搞小圈子</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- Card 12 -->
+    <article class="card" id="x-12" data-card="x-12">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 12｜第 11 章：民生与社会建设</h3>
+          <div class="q-ref"><span class="q-tag">单 62–67</span><span class="q-tag">多 95–100</span></div>
+        </div>
+        <button class="check-btn" data-card="x-12" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>定位</th><th>唯一正确对应</th></tr></thead>
+          <tbody>
+            <tr><td>全面建设现代化国家出发点落脚点 / 发展根本目的</td><td><strong>让人民生活越过越好</strong> / <strong>增进民生福祉</strong>（单 62、63）</td></tr>
+            <tr><td>保障和改善民生<strong>重要方针</strong></td><td><strong>坚持尽力而为、量力而行</strong>（单 64）</td></tr>
+            <tr><td>改善民生共享成果最重要最直接方式 / 共富基础性制度</td><td><strong>收入分配</strong> / <strong>分配制度</strong>（单 65、66）</td></tr>
+            <tr><td>新时代加强社会建设<strong>重要着力点</strong></td><td><strong>健全和完善社会保障体系</strong>（单 67）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 3 个必排死坑（多 95–98）：</strong><br>
+        1. <strong>社会保障</strong>（连同税收、转移支付）属于<strong>再分配</strong>，❌ 绝不是“第三次分配”（第三次分配指慈善捐赠义工！多 98）。<br>
+        2. “国家强盛之基、安全之要”是<strong>科技自立自强</strong>（不是民生！多 95）；“高质量发展战略基点”是<strong>构建新发展格局</strong>（不是增进民生福祉！多 96）。
+      </div>
+    </article>
+
+    <!-- Card 13 -->
+    <article class="card" id="x-13" data-card="x-13">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 13｜第 12 章：社会主义生态文明</h3>
+          <div class="q-ref"><span class="q-tag">单 68–70</span><span class="q-tag">多 101–105</span></div>
+        </div>
+        <button class="check-btn" data-card="x-13" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li>生态环境问题归根到底 = <strong>经济发展方式和生活方式问题</strong>（单 68）。</li>
+        <li>解决生态环境问题的<strong>治本之策</strong> = <strong>绿色低碳发展</strong>（单 69）；实现碳达峰碳中和的<strong>关键</strong> = <strong>能源绿色低碳转型</strong>（单 70）。</li>
+        <li>生态文明“四个重大转变”（多 104 全选）：重点整治→系统治理、被动应对→主动作为、参与者→引领者、实践探索→科学理论指导。</li>
+      </ul>
+      <div class="trap-box">
+        <strong class="label">❌ 2 个必排死坑（多 102, 105）：</strong><br>
+        1. 引领发展的第一动力是<strong>创新</strong>，❌ 不是“绿水青山就是金山银山”理念（多 102）。<br>
+        2. 我国生态环境保护结构性、根源性、趋势性压力<strong>尚未根本缓解</strong>，❌ 看见“已得到根本缓解”直接划掉（多 105）！
+      </div>
+    </article>
+
+    <!-- Card 14 -->
+    <article class="card" id="x-14" data-card="x-14">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 14｜第 13 章：维护和塑造国家安全</h3>
+          <div class="q-ref"><span class="q-tag">单 71–75</span><span class="q-tag">多 106–110</span></div>
+        </div>
+        <button class="check-btn" data-card="x-14" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>安全要素</th><th>精准帽子（单 71–75 / 多 110）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>政治安全</strong></td><td><strong>根本 / 生命线 / 首要任务 / 根本保证</strong></td></tr>
+            <tr><td><strong>人民安全</strong></td><td><strong>宗旨 / 居于中心地位</strong></td></tr>
+            <tr><td><strong>国家利益至上</strong></td><td>实现政治安全和人民安全的<strong>要求和原则</strong></td></tr>
+            <tr><td><strong>重点领域国家安全</strong></td><td>构建新安全格局的<strong>主阵地、主战场</strong>（不是单一意识形态/政权！）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="trap-box">
+        <strong class="label">❌ 2 个必排死坑（多 106, 109）：</strong><br>
+        1. 总体国家安全观突出大安全理念，❌ 但绝不是安全泛化、更<strong>不是追求“绝对安全”</strong>！<br>
+        2. 政治安全是首要任务，❌ 但绝不意味着“其他领域安全问题就会<strong>自动解决</strong>”！
+      </div>
+    </article>
+
+    <!-- Card 15 -->
+    <article class="card" id="x-15" data-card="x-15">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 15｜第 14 章：强军兴军</h3>
+          <div class="q-ref"><span class="q-tag">单 76–78</span><span class="q-tag">多 111–114</span></div>
+        </div>
+        <button class="check-btn" data-card="x-15" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>新时代强军目标（聚焦点着力点 = 听党指挥 + 能打胜仗 + 作风优良，多 113 排军民融合）：</strong><br>
+          • <strong>听党指挥</strong> = <strong>灵魂 / 军队建设首要 / 命脉所在</strong><br>
+          • <strong>能打胜仗</strong> = <strong>核心</strong>（单 76 / 多 114）<br>
+          • <strong>作风优良</strong> = <strong>保证 / 鲜明特色和政治优势</strong>（别安给听党指挥！多 114）</li>
+        <li>坚持党对军队绝对领导的<strong>根本制度和根本实现形式</strong> = <strong>军委主席负责制</strong>（单 77）；<strong>政治建军</strong> = <strong>人民军队立军之本</strong>（政治工作 = 生命线，单 78）。</li>
+        <li>❌ 军事是保底硬实力，不决定“当代中国价值观念走向世界”（那是文化软实力！多 111）。</li>
+      </ul>
+    </article>
+
+    <!-- Card 16 -->
+    <article class="card" id="x-16" data-card="x-16">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 16｜第 15 章：“一国两制”与祖国完全统一</h3>
+          <div class="q-ref"><span class="q-tag">单 79–81</span><span class="q-tag">多 115–121</span></div>
+        </div>
+        <button class="check-btn" data-card="x-16" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li><strong>“一国两制”：</strong><strong>最高原则</strong> = <strong>维护国家主权、安全、发展利益</strong>（单 79）；<strong>根本宗旨</strong> = 维护国家主权安全发展利益 + <strong>保持香港、澳门长期繁荣稳定</strong>（多 117 只选 AB！）；“一国”是前提基础，“两制”从属派生于“一国”，❌ 绝不是“<strong>等量齐观、比肩并列</strong>”（多 118）；全面管治权与高度自治权是源与流、本与末，特区<strong>不存在“剩余权力”</strong>（多 119 全选）。</li>
+        <li><strong>解决台湾问题总体方略（单 80–81）：</strong><br>
+          • <strong>历史方位</strong> = <strong>在中华民族伟大复兴进程中推进祖国统一</strong><br>
+          • <strong>战略支撑</strong> = <strong>坚持决不承诺放弃使用武力</strong>（政治基础 = 一中原则和九二共识；根本动力 = 团结台湾同胞争取民心；战略思路 = 在大陆发展进步基础上解决）</li>
+      </ul>
+    </article>
+
+    <!-- Card 17 -->
+    <article class="card" id="x-17" data-card="x-17">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 17｜第 16 章：大国外交与人类命运共同体</h3>
+          <div class="q-ref"><span class="q-tag">单 82–84</span><span class="q-tag">多 122–123</span></div>
+        </div>
+        <button class="check-btn" data-card="x-17" type="button">○ 标为已懂</button>
+      </div>
+      <ul class="clean-ul">
+        <li>大国外交<strong>主线</strong> = <strong>服务民族复兴、促进人类进步</strong>（单 82）；对外工作<strong>出发点和落脚点</strong> = <strong>维护国家主权、安全、发展利益</strong>（单 84）。</li>
+        <li><strong>周边外交理念</strong> = <strong>亲诚惠容</strong>（单 83；区分：周边外交<strong>方针</strong> = 与邻为善、以邻为伴；对<strong>发展中国家</strong>理念 = 真实亲诚！）。</li>
+        <li><strong>走和平发展道路</strong> = 新时代中国外交的<strong>基本原则</strong>（❌ 绝不是“对外工作总目标”！对外工作总目标 = <strong>推动构建人类命运共同体</strong>，多 122）。</li>
+      </ul>
+    </article>
+
+    <!-- Card 18 -->
+    <article class="card" id="x-18" data-card="x-18">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">卡 18｜第 17 章：全面从严治党与自我革命</h3>
+          <div class="q-ref"><span class="q-tag">单 85–93</span><span class="q-tag">多 124–127</span></div>
+        </div>
+        <button class="check-btn" data-card="x-18" type="button">○ 标为已懂</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>极易混问法（单 85–93 / 多 124–127）</th><th>唯一正确对应</th></tr></thead>
+          <tbody>
+            <tr><td>党建的一贯要求和<strong>根本方针</strong></td><td><strong>党要管党、从严治党</strong></td></tr>
+            <tr><td>深入推进党的建设的<strong>统领</strong>（首位）</td><td><strong>政治建设</strong></td></tr>
+            <tr><td><strong>党的政治建设</strong>的首要任务（多 126）</td><td><strong>保证全党服从中央 + 维护党中央权威和集中统一领导</strong></td></tr>
+            <tr><td><strong>党内政治生活</strong>的首要任务（单 87 必分！）</td><td><strong>加强思想教育和理论武装</strong></td></tr>
+            <tr><td>作风问题的核心 / 再塑形象“第一行动”</td><td><strong>党同人民群众的关系问题</strong> / <strong>中央八项规定</strong>（作风建设必须打持久战，多 127 排 C！）</td></tr>
+            <tr><td>最彻底的自我革命 / 区别其他政党显著标志</td><td><strong>反腐败</strong> / <strong>勇于自我革命</strong></td></tr>
+            <tr><td>自我革命<strong>根本目的</strong> / <strong>重要途径</strong></td><td><strong>引领伟大社会革命</strong>（跳出周期率=战略目标，大党难题=主攻方向）/ <strong>自我净化完善革新提高</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+
+  <!-- ==================== TAB 3: RED/BLACK TRAPS ==================== -->
+  <section class="panel" id="panel-traps">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">🚫 考场黑榜：新思想（P82–112）看见这 16 句话直接划掉！</h3>
+        </div>
+      </div>
+      <div class="kill-item"><span class="kill-badge">必排 1</span><div><strong>非公有制经济 / 外资经济是“社会主义经济”的重要组成部分</strong><div class="kill-fix">真相：漏了“市场”二字！公有制才叫社会主义经济，非公/外资只能叫“社会主义市场经济”的重要组成部分。（多 37、47）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 2</span><div><strong>党的领导制度是我国的“根本政治制度” / 党的领导要事无巨细都去管</strong><div class="kill-fix">真相：党的领导制度是“根本领导制度”（根本政治制度是人大）；党是总揽全局协调各方，绝不包办一切。（多 22、24）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 3</span><div><strong>人民政协是多党派参政的“国家权力机关”</strong><div class="kill-fix">真相：人大才是国家权力机关！政协是爱国统一战线组织和专门协商机构。（多 73）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 4</span><div><strong>人大制度保证全体人民“直接参与”国家管理 / 存在“最纯粹、最好的民主”</strong><div class="kill-fix">真相：人民通过选举人大代表间接管理国家；民主没有最好只有更好，不存在“最纯粹的民主”。（多 66、69）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 5</span><div><strong>党内法规体系上升为全社会都必须遵守的法律规范体系</strong><div class="kill-fix">真相：党内法规管党员干部，国家法律规范体系才管全社会，不能混淆！（多 70）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 6</span><div><strong>共同富裕 = 所有人同时富裕 / 所有地区同时达同一水准 / 等实现现代化再解决</strong><div class="kill-fix">真相：绝非平均主义、非同时同步富裕，要在现代化进程中逐步解决。（多 27、28、56）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 7</span><div><strong>社会保障是“第三次分配”制度的重要组成部分</strong><div class="kill-fix">真相：税收、社保、转移支付属于“再分配”；第三次分配是自愿慈善公益！（多 98）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 8</span><div><strong>农村土地经营权不流转 / 我国经济始终保持高速增长 / 生态压力得到根本缓解</strong><div class="kill-fix">真相：三权分置下经营权可以流转；经济已转向高质量发展；生态压力“尚未根本缓解”！（多 44、54、105）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 9</span><div><strong>先抓物质富足、再抓精神富有 / 京津冀是共同富裕示范区</strong><div class="kill-fix">真相：两手抓不能先物质再精神；浙江才是高质量发展建设共同富裕示范区！（多 19、55）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 10</span><div><strong>治理体系越完备能力就一定越强 / 改革同时满足所有人诉求 / 彻底消除外部不确定性 / 根本杜绝腐败</strong><div class="kill-fix">真相：凡把制度/政策效果说得绝对化（一定越强、满足所有人、彻底消除、根本杜绝）一律必排！（多 33、35、36、50）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 11</span><div><strong>“进入新时代”是进入新发展阶段 / 全面建成小康社会之后的反映</strong><div class="kill-fix">真相：进入新时代是 2012（十八大），全面小康和新发展阶段在 2021，时间倒置！（多 13、14）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 12</span><div><strong>“一国”之内的“两制”等量齐观、比肩并列</strong><div class="kill-fix">真相：“一国”是前提基础，“两制”从属派生于“一国”，国家主体实行社会主义！（多 118）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 13</span><div><strong>追求绝对安全是国家安全中心任务 / 维护好政治安全其他安全就会自动解决</strong><div class="kill-fix">真相：大安全绝非追求绝对安全；政治安全放首位仍须统筹推进其他各领域安全！（多 106、109）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 14</span><div><strong>走和平发展道路是新时代对外工作的“总目标”</strong><div class="kill-fix">真相：走和平发展道路是“基本原则”；推动构建人类命运共同体才是“总目标”！（多 122）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 15</span><div><strong>作风建设必须一鼓作气，不能打持久战</strong><div class="kill-fix">真相：“四风”具顽固性反复性，必须打攻坚战、持久战！（多 127）</div></div></div>
+      <div class="kill-item"><span class="kill-badge">必排 16</span><div><strong>“百花齐放、百家争鸣”或“面向世界”是决定文化事业前途命运的根本方向</strong><div class="kill-fix">真相：“二为”（为人民服务、为社会主义服务）才是根本方向；“双百”是重要方针！（多 88、94）</div></div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <h3 class="card-title">🎩 高频易混“五组超级帽子”速查表</h3>
+        </div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>易混组</th><th>逐项精准对号（单选拿满分密码！）</th></tr></thead>
+          <tbody>
+            <tr><td><strong>四个“出发点落脚点”</strong></td><td>• 现代化建设 → <strong>实现人民对美好生活的向往</strong>（单 8）<br>• 发展 → <strong>满足人民对美好生活的新期待</strong>（单 14）<br>• 进一步全面深化改革 → <strong>促进社会公平正义、增进人民福祉</strong>（单 22）<br>• 全面建设现代化国家 → <strong>让人民生活越过越好</strong>（单 62）<br>• 对外工作 → <strong>维护国家主权、安全、发展利益</strong>（单 84）</td></tr>
+            <tr><td><strong>三个“首要任务”</strong></td><td>• 全面建设社会主义现代化国家 → <strong>高质量发展</strong><br>• 新型城镇化 → <strong>农业转移人口市民化</strong>（单 38）<br>• 依宪治国 → <strong>全面贯彻实施宪法</strong>（单 54）<br>• <strong>党的政治建设</strong> → <strong>保证全党服从中央、维护党中央权威和集中统一领导</strong>（多 126）<br>• <strong>党内政治生活</strong> → <strong>加强思想教育和理论武装</strong>（单 87）</td></tr>
+            <tr><td><strong>三个“区别于其他政党显著标志”</strong></td><td><strong>勇于自我革命</strong> ＋ <strong>人民立场</strong> ＋ <strong>三大优良作风</strong>（❌ 统战不是！）</td></tr>
+            <tr><td><strong>强军三句话</strong></td><td><strong>听党指挥</strong>（灵魂/首要/命脉）｜<strong>能打胜仗</strong>（核心）｜<strong>作风优良</strong>（保证/鲜明特色和政治优势）</td></tr>
+            <tr><td><strong>外交三理念</strong></td><td>周边理念 = <strong>亲诚惠容</strong>｜周边方针 = <strong>与邻为善、以邻为伴</strong>｜对发展中国家 = <strong>真实亲诚</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 4: 25-ITEM FAST QUIZ ==================== -->
+  <section class="panel" id="panel-quiz">
+    <div class="quiz-header">
+      <div>
+        <div class="quiz-score" id="quizScore">快判得分：0 / 25（先冲到 22 分以上再刷 220 题！）</div>
+        <div style="font-size:12.5px;color:var(--muted);">全部改编自新思想 P82–112 最高杀伤力考坑，判断该“选”还是该“排”！</div>
+      </div>
+      <button class="pill primary" id="resetQuizBtn" type="button">🔄 重测一遍</button>
+    </div>
+    <div id="quizContainer"></div>
+  </section>
+</main>
+
+<script>
+(function() {
+  const STORE_MASTER = "ky_xxs_master_v1";
+  const STORE_THEME = "ky_xxs_guide_theme_v1";
+
+  const tabBtns = document.querySelectorAll(".tab-btn");
+  const panels = document.querySelectorAll(".panel");
+  tabBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = btn.dataset.tab;
+      tabBtns.forEach(b => b.classList.toggle("active", b === btn));
+      panels.forEach(p => p.classList.toggle("active", p.id === "panel-" + target));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  if (location.protocol === "file:") {
+    const link = document.getElementById("toDrillLink");
+    if (link) link.href = "./新思想全220题_单选多选云同步刷题本(P82-112).html";
+  }
+
+  const themeBtn = document.getElementById("themeBtn");
+  function applyTheme(t) {
+    if (t === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      themeBtn.textContent = "☀️ 日间";
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      themeBtn.textContent = "🌙 夜间";
+    }
+  }
+  let theme = "light";
+  try { theme = localStorage.getItem(STORE_THEME) || "light"; } catch (e) {}
+  applyTheme(theme);
+  themeBtn.addEventListener("click", () => {
+    theme = theme === "dark" ? "light" : "dark";
+    try { localStorage.setItem(STORE_THEME, theme); } catch (e) {}
+    applyTheme(theme);
+  });
+
+  let mastered = {};
+  try { mastered = JSON.parse(localStorage.getItem(STORE_MASTER) || "{}") || {}; } catch (e) {}
+  const allCheckBtns = document.querySelectorAll(".check-btn");
+  const masterText = document.getElementById("masterText");
+  const masterFill = document.getElementById("masterFill");
+
+  function renderMaster() {
+    let count = 0;
+    allCheckBtns.forEach(btn => {
+      const id = btn.dataset.card;
+      const done = !!mastered[id];
+      if (done) count++;
+      btn.classList.toggle("done", done);
+      btn.textContent = done ? "✓ 已掌握" : "○ 标为已懂";
+      const card = document.querySelector('.card[data-card="' + id + '"]');
+      if (card) card.classList.toggle("mastered", done);
+    });
+    const total = allCheckBtns.length;
+    masterText.textContent = "通关进度：" + count + " / " + total + " 卡";
+    masterFill.style.width = Math.round((count / total) * 100) + "%";
+  }
+
+  allCheckBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.card;
+      mastered[id] = !mastered[id];
+      try { localStorage.setItem(STORE_MASTER, JSON.stringify(mastered)); } catch (e) {}
+      renderMaster();
+    });
+  });
+  renderMaster();
+
+  const QUIZ = [
+    { q: "在“六个必须坚持”中，必须坚持自信自立是内在精神特质，“十个明确”构成四梁八柱。", ok: true, ref: "单1/2", why: "全对！人民至上=根本价值立场，自信自立=内在精神特质，守正创新=鲜明理论品格。" },
+    { q: "促进人与自然和谐共生，是中国式现代化区别于西方现代化的显著标志。", ok: false, ref: "单7", why: "帽子戴错！全体人民共同富裕才是区别于西方现代化的显著标志；人与自然和谐共生是“鲜明特点”。" },
+    { q: "党的领导制度是我国的根本政治制度，在制度体系中居于统领地位。", ok: false, ref: "单12/多24", why: "一字之差！党的领导制度是“根本领导制度”，不是“根本政治制度”（人大制度才是根本政治制度）。" },
+    { q: "改革开放是实现“两个一百年”奋斗目标的关键一招，也是实现中华民族伟大复兴中国梦的关键一步。", ok: false, ref: "多30", why: "后半句张冠李戴！全面建成小康社会才是实现中国梦的“关键一步”。" },
+    { q: "进一步全面深化改革，必须以深化经济体制改革为重点和牵引，以制度建设为主线。", ok: true, ref: "单17/21", why: "完全精准！主题=中国式现代化，重点与牵引=经济体制改革，主线=制度建设，出发点落脚点=公平正义人民福祉。" },
+    { q: "非公有制经济和外资经济都是我国社会主义经济的重要组成部分。", ok: false, ref: "多37/47", why: "缺了关键两字！必须写“社会主义市场经济”，只有公有制经济才能叫“社会主义经济”！" },
+    { q: "共享发展注重的是解决发展不平衡问题。", ok: false, ref: "多40", why: "帽子互换！共享解决“社会公平正义问题”；协调才解决“发展不平衡问题”。" },
+    { q: "新质生产力以全要素生产率大幅提升为核心标志，以三要素及其优化组合跃升为基本内涵。", ok: true, ref: "单33/多43", why: "完全精准！注意不要把核心标志、基本内涵和核心要素（科技创新）混在一起。" },
+    { q: "推进乡村全面振兴，坚持农业农村优先发展是总方针，发展乡村特色产业是基础。", ok: true, ref: "单35/36", why: "全对！总目标=农业农村现代化，总方针=优先发展，基础=乡村特色产业。" },
+    { q: "巩固农村基本经营制度的底线包括土地公有制不改、耕地红线不破、农民利益不受损、土地经营权不流转。", ok: false, ref: "多54", why: "第四条错！三权分置下农村土地经营权是可以依法流转的！" },
+    { q: "高标准建设雄安新区、推进长江经济带发展属于区域协调发展战略。", ok: false, ref: "单37", why: "串台！雄安、长江、粤港澳大湾区属于“区域重大战略”；鼓励东部加快现代化/西部/东北/中部才属于“区域协调发展战略”。" },
+    { q: "基础研究是科技创新的源头，自主创新包括原始创新、集成创新和开放创新。", ok: true, ref: "单42/多60", why: "全对！注意自主创新不含“改革创新”。" },
+    { q: "人民政协作为多党派参政的国家权力机关，是社会主义协商民主的重要渠道。", ok: false, ref: "多73", why: "必排死坑！人大才是国家权力机关；政协是爱国统一战线组织和专门协商机构！" },
+    { q: "协商民主是新时代我国民主政治领域具有重大创新意义的标志性成果。", ok: false, ref: "单45/多74", why: "张冠李戴！“全过程人民民主”才是重大创新意义的标志性成果！" },
+    { q: "统一战线最鲜明的特征和最核心最根本的问题是坚持党的领导，本质要求是大团结大联合。", ok: true, ref: "单47/48", why: "全对！同时注意：统战不是“区别于其他政党的显著标志”（那是勇于自我革命/人民立场/三大作风）。" },
+    { q: "法治政府建设是全面依法治国的重点任务和主体工程，建设中特法治体系是总抓手。", ok: true, ref: "单53/55", why: "完全精准！法治国家=目标，法治政府=重点任务主体工程，法治社会=基础。" },
+    { q: "中华文明的包容性，从根本上决定了中国不断追求文明交流互鉴而不搞文化霸权。", ok: false, ref: "多91/92", why: "串台！“不断追求文明交流互鉴而不搞文化霸权”是由“和平性”决定的，不是包容性！" },
+    { q: "坚持“百花齐放、百家争鸣”是决定社会主义文化事业前途命运的关键。", ok: false, ref: "多88", why: "帽子互换！“二为”（为人民服务、为社会主义服务）才是根本方向和关键；“双百”是重要方针。" },
+    { q: "社会保障是第三次分配制度的重要组成部分，发挥民生安全网作用。", ok: false, ref: "多98", why: "必排死坑！社保、税收、转移支付属于“再分配”；第三次分配是自愿慈善公益！" },
+    { q: "新时代我国生态环境保护结构性、根源性、趋势性压力已得到根本缓解。", ok: false, ref: "多105", why: "必排！压力“尚未根本缓解”，仍处于压力叠加、负重前行的关键期。" },
+    { q: "总体国家安全观以人民安全居中心地位，以政治安全为生命线，但绝不是追求绝对安全。", ok: true, ref: "单71/74/多106", why: "全对！同时注意政治安全放首位不代表其他安全会“自动解决”。" },
+    { q: "听党指挥是人民军队的灵魂，能打胜仗是强军的核心，作风优良是鲜明特色和政治优势。", ok: true, ref: "单76/多114", why: "完全精准！绝不能把“鲜明特色和政治优势”或“核心”安错对象。" },
+    { q: "“一国两制”的根本宗旨是维护国家主权安全发展利益、保持港澳长期繁荣稳定，“一国”内“两制”等量齐观。", ok: false, ref: "多117/118", why: "后半句必排！“两制”从属派生于“一国”，绝不是“等量齐观、比肩并列”。" },
+    { q: "我国周边外交秉持“亲诚惠容”理念，走和平发展道路是新时代对外工作的总目标。", ok: false, ref: "单83/多122", why: "后半句张冠李戴！走和平发展道路是基本原则；推动构建人类命运共同体才是对外工作总目标！" },
+    { q: "党内政治生活的首要任务是加强思想教育和理论武装，党的政治建设的首要任务是保证全党服从中央、维护党中央权威和集中统一领导。", ok: true, ref: "单87/多126", why: "高能精准区分！这两个“首要任务”考场最爱互换，背牢这一条稳拿分！" }
+  ];
+
+  const quizContainer = document.getElementById("quizContainer");
+  const quizScore = document.getElementById("quizScore");
+  let quizAnswers = {};
+
+  function renderQuiz() {
+    quizContainer.innerHTML = "";
+    QUIZ.forEach((item, idx) => {
+      const card = document.createElement("div");
+      card.className = "quiz-card";
+      card.innerHTML =
+        '<p class="quiz-q"><span class="quiz-num">第 ' + (idx + 1) + ' 判 · ' + item.ref + '</span>' + item.q + '</p>' +
+        '<div class="quiz-btns">' +
+          '<button type="button" class="q-choice" data-idx="' + idx + '" data-val="true">✅ 正确（应选）</button>' +
+          '<button type="button" class="q-choice" data-idx="' + idx + '" data-val="false">❌ 陷阱（排除）</button>' +
+        '</div>' +
+        '<div class="quiz-fb" id="qfb-' + idx + '"></div>';
+      quizContainer.appendChild(card);
+    });
+
+    quizContainer.querySelectorAll(".q-choice").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const idx = Number(btn.dataset.idx);
+        const val = btn.dataset.val === "true";
+        const item = QUIZ[idx];
+        const isRight = (val === item.ok);
+        quizAnswers[idx] = isRight;
+
+        const pair = quizContainer.querySelectorAll('.q-choice[data-idx="' + idx + '"]');
+        pair.forEach(b => b.classList.remove("picked-ok", "picked-err"));
+        btn.classList.add(isRight ? "picked-ok" : "picked-err");
+
+        const fb = document.getElementById("qfb-" + idx);
+        fb.className = "quiz-fb show " + (isRight ? "ok" : "err");
+        fb.innerHTML = (isRight ? "<strong>🎯 判对了！</strong>" : "<strong>💥 踩坑啦！</strong>") + item.why;
+        updateQuizScore();
+      });
+    });
+    updateQuizScore();
+  }
+
+  function updateQuizScore() {
+    const answered = Object.keys(quizAnswers).length;
+    const correct = Object.values(quizAnswers).filter(Boolean).length;
+    const tip = answered === QUIZ.length
+      ? (correct >= 22 ? " 🎉 通关！快去横扫新思想全 220 题！" : " 💪 再扫一遍错判点，稳上 22 分！")
+      : "（目标 22 分以上再去刷题）";
+    quizScore.textContent = "快判得分：" + correct + " / " + QUIZ.length + "（已判 " + answered + " 题）" + tip;
+  }
+
+  document.getElementById("resetQuizBtn").addEventListener("click", () => {
+    quizAnswers = {};
+    renderQuiz();
+  });
+
+  renderQuiz();
+})();
+</script>
+</body>
+</html>

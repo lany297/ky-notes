@@ -406,6 +406,7 @@
         </div>
         <div class="ctrl-pills">
           <a class="pill" href="./mzt-guide.html" id="guideLink">📖 毛中特考点</a>
+          <a class="pill" href="./xxs.html" id="xxsLink">📙 新思想220</a>
           <a class="pill" href="./index.html" id="maLink">马原212</a>
           <button type="button" class="pill" id="collapseBtn">收起答案</button>
           <button type="button" class="pill" id="themeBtn">🌙 夜间</button>
@@ -2052,7 +2053,8 @@
       return;
     }
     const payload = btoa(unescape(encodeURIComponent(cloud.provider + "|" + cloud.token + "|" + cloud.gistId)));
-    const magic = location.href.split("#")[0] + "#sync=" + payload;
+    const base = location.protocol === "file:" ? "https://lany297.github.io/ky-notes/mzt.html" : location.href.split("#")[0];
+    const magic = base + "#sync=" + payload;
     try {
       await navigator.clipboard.writeText(magic);
       showToast("📱 已复制手机免配置链接，发给自己点开即可！");
@@ -2148,6 +2150,8 @@
   if (location.protocol === "file:") {
     const gl = document.getElementById("guideLink");
     if (gl) gl.href = "./毛中特_纯应试考点通关手册(P65-81).html";
+    const xx = document.getElementById("xxsLink");
+    if (xx) xx.href = "./新思想全220题_单选多选云同步刷题本(P82-112).html";
     const ml = document.getElementById("maLink");
     if (ml) ml.href = "./马原全212题_云同步刷题本.html";
   }

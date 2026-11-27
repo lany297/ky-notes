@@ -1,10 +1,12 @@
-const CACHE_NAME = "ky-notes-v4";
+const CACHE_NAME = "ky-notes-v5";
 const ASSETS = [
   "./",
   "./index.html",
   "./ch45.html",
   "./mzt-guide.html",
   "./mzt.html",
+  "./xxs-guide.html",
+  "./xxs.html",
   "./manifest.webmanifest",
   "./icon.svg",
   "./icon-192.png",
